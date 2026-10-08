@@ -4,23 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MDGN · Arquitectura y Construcción</title>
-  <meta name="description" content="MDGN: arquitectura comercial y construcción. Proyectos para supermercados, strip centers, oficinas y corporativos, y habilitación de oficinas en Santiago, Chile.">
+  <meta name="description" content="MDGN Arquitectura y Construcción: expertos en habilitación de oficinas, espacios comerciales y corporativos en modalidad design and build. Santiago, Chile.">
   <meta property="og:title" content="MDGN · Arquitectura y Construcción">
-  <meta property="og:description" content="Arquitectura comercial y construcción de oficinas y corporativos en Santiago, Chile.">
+  <meta property="og:description" content="Expertos en habilitación de oficinas, espacios comerciales y corporativos. Santiago, Chile.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo-512.png">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#1b1e1c">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "MDGN Arquitectura y Construcción",
+    "url": "https://www.mdgn.cl",
     "email": "javier.mondragon@mdgn.cl",
     "telephone": "+56971392003",
     "address": {
@@ -38,13 +39,18 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="#inicio" class="brand" aria-label="MDGN, inicio">
-        <img src="assets/logo-512.png" alt="MDGN" width="44" height="44">
+        <img src="assets/logo-brochure.png" alt="MDGN" width="46" height="43">
         <span class="brand-sub">Arquitectura<br>y Construcción</span>
       </a>
-      <nav class="nav" aria-label="Principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+      <nav id="nav" class="nav" aria-label="Principal">
+        <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
-        <a href="#sectores">Sectores</a>
         <a href="#proceso">Proceso</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#equipo">Equipo</a>
         <a href="#contacto" class="nav-cta">Contacto</a>
       </nav>
     </div>
@@ -52,126 +58,305 @@
 
   <main id="inicio">
 
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Santiago, Chile</p>
-        <h1>Arquitectura y construcción para espacios comerciales y corporativos.</h1>
-        <div class="hero-foot">
-          <p class="lead">Diseñamos supermercados, strip centers, oficinas y corporativos, y construimos y habilitamos oficinas listas para operar.</p>
-          <div class="actions">
-            <a class="btn btn-solid" href="#contacto">Conversemos tu proyecto</a>
-            <a class="btn btn-line" href="#servicios">Ver servicios</a>
-          </div>
+    <!-- Portada -->
+    <section class="hero dark">
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="assets/logo-brochure.png" alt="" width="160" height="148">
+        <h1>Expertos en habilitación de oficinas, espacios comerciales y corporativos</h1>
+        <p class="eyebrow accent-light">Arquitectura y construcción · Santiago, Chile</p>
+        <div class="actions">
+          <a class="btn btn-accent" href="#contacto">Conversemos tu proyecto</a>
+          <a class="btn btn-ghost-light" href="#obras">Ver obras</a>
         </div>
       </div>
-      <div class="hero-grid" aria-hidden="true"></div>
     </section>
 
-    <section id="servicios" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="num">01</span>
-          <h2>Servicios</h2>
+    <!-- Quiénes somos -->
+    <section id="nosotros" class="section cream">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Quiénes somos</p>
+          <h2 class="h2">Habilitamos espacios de trabajo y comercio listos para operar.</h2>
         </div>
-        <div class="services">
-          <article class="service">
-            <span class="service-tag">A</span>
-            <h3>Arquitectura</h3>
-            <p>Proyectos de arquitectura comercial y corporativa, desde el diseño hasta la documentación del proyecto.</p>
-            <ul>
-              <li>Supermercados</li>
-              <li>Strip centers</li>
-              <li>Oficinas</li>
-              <li>Corporativos</li>
-            </ul>
+        <p class="body-lg">Somos especialistas en habilitación (fit-out) de oficinas, locales comerciales y espacios corporativos. MDGN Arquitectos SpA diseña y tramita; MDGN Constructora SpA ejecuta la obra gruesa y las terminaciones. Trabajamos en modalidad design and build: un solo equipo y un solo contrato del diseño a la entrega.</p>
+      </div>
+    </section>
+
+    <!-- Por qué MDGN -->
+    <section class="section terracotta">
+      <div class="wrap">
+        <p class="eyebrow on-accent">Por qué MDGN</p>
+        <h2 class="display">Diseñamos y habilitamos pensando en la operación.</h2>
+        <p class="body-lg narrow on-accent">Venimos de liderar arquitectura e ingeniería del lado del mandante. Por eso cada habilitación considera desde el inicio cómo se usará el espacio: flujos, estándares de marca, plazos de apertura y la convivencia con la operación existente.</p>
+        <div class="rule-cols three on-accent-rules">
+          <h3>Fit-out design and build</h3>
+          <h3>Obras sin detener la operación</h3>
+          <h3>Un solo interlocutor del diseño a la obra</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cifras -->
+    <section class="section sand">
+      <div class="wrap">
+        <p class="eyebrow">Trayectoria</p>
+        <h2 class="h2">MDGN en cifras</h2>
+        <h3 class="stats-title">Proyectos de arquitectura</h3>
+        <div class="stats">
+          <div><strong>+40</strong><span>encargos para Walmart Chile desde 2023 y otros clientes</span></div>
+          <div><strong>+180.000</strong><span>m² de proyectos retail a cargo del equipo</span></div>
+          <div><strong>+15</strong><span>años de experiencia en arquitectura retail</span></div>
+          <div><strong>+30</strong><span>supermercados habilitados o remodelados por el equipo</span></div>
+        </div>
+        <h3 class="stats-title">Proyectos de construcción</h3>
+        <div class="stats">
+          <div><strong>+30</strong><span>encargos de construcción</span></div>
+          <div><strong>+10.000</strong><span>m² habilitados comerciales</span></div>
+          <div><strong>+15</strong><span>años de experiencia en obras de habilitación</span></div>
+          <div><strong>+25</strong><span>clientes atendidos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section id="servicios" class="section sand">
+      <div class="wrap">
+        <p class="eyebrow">Especialidades</p>
+        <h2 class="h2">Expertos en habilitación</h2>
+        <div class="cards three">
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3>Oficinas</h3>
+            <p>Habilitación de plantas libres y remodelaciones: puestos de trabajo, salas de reunión, casinos y baños.</p>
           </article>
-          <article class="service">
-            <span class="service-tag">C</span>
-            <h3>Construcción y habilitación</h3>
-            <p>Construcción y habilitación de oficinas y espacios corporativos, entregados listos para que tu equipo empiece a trabajar.</p>
-            <ul>
-              <li>Habilitación de oficinas</li>
-              <li>Espacios corporativos</li>
-              <li>Remodelaciones interiores</li>
-            </ul>
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3>Espacios comerciales</h3>
+            <p>Locales, supermercados y strip centers, con estándares de marca y obras compatibles con la venta.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3>Espacios corporativos</h3>
+            <p>Sedes, centros de negocios, coworks y áreas comunes que reflejan la identidad de cada organización.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="sectores" class="section section-dark">
+    <!-- Servicios -->
+    <section class="section cream">
       <div class="wrap">
-        <div class="section-head">
-          <span class="num">02</span>
-          <h2>Sectores</h2>
+        <p class="eyebrow">Servicios</p>
+        <h2 class="h2">Todo el ciclo, del proyecto a la obra</h2>
+        <div class="grid-items">
+          <div><h3>Diseño y proyecto</h3><p>Anteproyecto, layout comercial y proyecto de arquitectura.</p></div>
+          <div><h3>Coordinación de especialidades</h3><p>Estructura, clima, electricidad, sanitaria y refrigeración.</p></div>
+          <div><h3>Permisos y trámites</h3><p>Permisos de edificación, recepción final y regularizaciones.</p></div>
+          <div><h3>Presupuesto y cubicación</h3><p>EETT, cubicaciones y presupuestos de obra en UF y CLP.</p></div>
+          <div><h3>Construcción</h3><p>Obra gruesa y terminaciones con MDGN Constructora.</p></div>
+          <div><h3>Remodelaciones por etapas</h3><p>Obras faseadas para remodelar sin detener la venta.</p></div>
         </div>
-        <ul class="sectors">
-          <li><span>Supermercados</span></li>
-          <li><span>Strip centers</span></li>
-          <li><span>Oficinas</span></li>
-          <li><span>Corporativos</span></li>
-        </ul>
       </div>
     </section>
 
-    <section id="proceso" class="section">
+    <!-- Construcción -->
+    <section class="section sand">
       <div class="wrap">
-        <div class="section-head">
-          <span class="num">03</span>
-          <h2>Cómo trabajamos</h2>
+        <p class="eyebrow">MDGN Constructora</p>
+        <h2 class="h2">Habilitaciones en modalidad design and build</h2>
+        <div class="cards three">
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3>Obra gruesa</h3>
+            <p>Obras previas, demoliciones, tabiquería, losas y estructuras menores para ampliaciones y remodelaciones.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3>Terminaciones</h3>
+            <p>Pavimentos, cielos, revestimientos, pinturas, baños y mobiliario, con estándares de marca de cada operador.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3>Especialidades</h3>
+            <p>Clima, electricidad, datos, sanitaria y mobiliario coordinados en un solo contrato.</p>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section id="proceso" class="section cream">
+      <div class="wrap">
+        <p class="eyebrow">Metodología</p>
+        <h2 class="h2">Cómo trabajamos, del diseño a la obra</h2>
         <ol class="steps">
-          <li>
-            <h3>Levantamiento</h3>
-            <p>Entendemos tu operación, el recinto y los plazos para definir el alcance del proyecto.</p>
-          </li>
-          <li>
-            <h3>Diseño</h3>
-            <p>Desarrollamos la arquitectura y la documentación necesaria para construir.</p>
-          </li>
-          <li>
-            <h3>Construcción</h3>
-            <p>Ejecutamos la obra y la habilitación con un mismo equipo responsable.</p>
-          </li>
-          <li>
-            <h3>Entrega</h3>
-            <p>Entregamos el espacio terminado y listo para operar.</p>
-          </li>
+          <li><span>01</span><h3>Diagnóstico</h3><p>Levantamiento, normativa y requerimientos de la operación.</p></li>
+          <li><span>02</span><h3>Proyecto</h3><p>Anteproyecto, proyecto y coordinación de especialidades.</p></li>
+          <li><span>03</span><h3>Permisos</h3><p>Tramitación municipal y aprobaciones del mandante.</p></li>
+          <li><span>04</span><h3>Presupuesto</h3><p>Cubicación, presupuesto de obra y Carta Gantt.</p></li>
+          <li><span>05</span><h3>Construcción</h3><p>Obra gruesa, terminaciones y especialidades con control de avance.</p></li>
+          <li><span>06</span><h3>Entrega</h3><p>Recepción de obra, observaciones resueltas y recepción final.</p></li>
         </ol>
       </div>
     </section>
 
-    <section id="contacto" class="section contact">
-      <div class="wrap contact-inner">
-        <div>
-          <div class="section-head">
-            <span class="num">04</span>
-            <h2>Contacto</h2>
+    <!-- Control de obra -->
+    <section class="section cream tight-top">
+      <div class="wrap">
+        <p class="eyebrow">Gestión de obra</p>
+        <h2 class="h2">Plazo y costo bajo control</h2>
+        <div class="rule-cols three">
+          <div><h3>Programación</h3><p>Carta Gantt por partidas y plazos en días corridos acordados con el mandante.</p></div>
+          <div><h3>Control de avance</h3><p>Curva S y avance ponderado por capítulo, programado versus real.</p></div>
+          <div><h3>Relación con la ITO</h3><p>Reportes periódicos, libro de obra y estados de pago documentados.</p></div>
+        </div>
+        <div class="banner">
+          <p class="eyebrow accent-light">Capítulos de control</p>
+          <p>Obras previas · Obra gruesa · Terminaciones · Mobiliario · Especialidades · Baños · Generales</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capacidades -->
+    <section class="section sand">
+      <div class="wrap">
+        <p class="eyebrow">Capacidades</p>
+        <h2 class="h2">Servicios especializados en retail</h2>
+        <div class="grid-items">
+          <div><h3>Prototipos de formato</h3><p>Desarrollo y actualización de prototipos y homologación de formatos.</p></div>
+          <div><h3>Microlayouts y cabidas</h3><p>Estudios de cabida y microlayout para locales nuevos y existentes.</p></div>
+          <div><h3>Roll outs de cadena</h3><p>Implementación estandarizada en múltiples locales: cajas, ascensores, marcas propias.</p></div>
+          <div><h3>Proyectos de frío</h3><p>Arquitectura asociada a sistemas de frío comercial en sala y trastienda.</p></div>
+          <div><h3>Permisos y normativa</h3><p>Expedientes PE, POM, MP y RF, regularizaciones y análisis OGUC.</p></div>
+          <div><h3>Levantamientos y BIM</h3><p>Levantamientos arquitectónicos y modelación BIM coordinada.</p></div>
+        </div>
+        <div class="rule-cols three strong-rule">
+          <div><p class="label">Software</p><p>AutoCAD, Revit, ArchiCAD, SketchUp, Navisworks, Enscape, Twinmotion, V-Ray y Adobe.</p></div>
+          <div><p class="label">Gestión</p><p>Carta Gantt, pipeline de proyectos, IBM Tririga y Microsoft Project.</p></div>
+          <div><p class="label">Normativa</p><p>OGUC, LGUC, vías de evacuación, inmuebles patrimoniales y declaraciones juradas sustitutivas de permisos.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trayectoria Walmart -->
+    <section id="trayectoria" class="section cream">
+      <div class="wrap">
+        <p class="eyebrow">Experiencia desde el mandante</p>
+        <h2 class="h2">Proyectos liderados en Walmart Chile, 2017–2021</h2>
+        <div class="rule-cols three">
+          <div><strong class="big">8</strong><h3>Habilitaciones</h3><p>Lider Calama, Concón, Lo Blanco, Talcahuano, San Felipe y Chiguayante; Express Pie Andino y Quilpué.</p></div>
+          <div><strong class="big">11</strong><h3>Remodelaciones</h3><p>Lider Puerto Montt, Osorno, Concepción, Los Morros, Independencia, Santa Rosa, Los Andes y Coronel; Express Pedro de Valdivia, Reñaca y Los Ángeles.</p></div>
+          <div><strong class="big">7</strong><h3>Prototipos y gestión</h3><p>Prototipos Lider, Express, SBA y Mayorista; cabidas Lider y Express; mejoras de andén de camiones; regularización municipal Lider Buenaventura.</p></div>
+        </div>
+        <p class="note">Proyectos liderados por Javier Mondragón como Jefe de Arquitectura e Ingeniería de Walmart Chile.</p>
+      </div>
+    </section>
+
+    <!-- Proyectos del equipo -->
+    <section class="section sand">
+      <div class="wrap">
+        <p class="eyebrow">Experiencia del equipo</p>
+        <h2 class="h2">Proyectos de nuestro equipo</h2>
+        <div class="projects">
+          <div><strong>20.495</strong><small>m² · 2024</small><h3>Lider Biobío</h3><p>Remodelación omnicanal</p></div>
+          <div><strong>16.543</strong><small>m² · 2024</small><h3>Lider La Serena</h3><p>Remodelación omnicanal</p></div>
+          <div><strong>14.480</strong><small>m² · 2022</small><h3>Lider Puente Nuevo</h3><p>Remodelación omnicanal</p></div>
+          <div><strong>13.700</strong><small>m² · 2020</small><h3>Lider Limache</h3><p>Supermercado nuevo</p></div>
+          <div><strong>11.148</strong><small>m² · 2021</small><h3>Lider Coquimbo</h3><p>Reconstrucción EPC</p></div>
+          <div><strong>7.364</strong><small>m² · 2023</small><h3>Lider San Pedro</h3><p>Habilitación en centro comercial</p></div>
+          <div><strong>7.263</strong><small>m² · 2023</small><h3>Lider Talcahuano</h3><p>Habilitación en centro comercial</p></div>
+          <div><strong>3.200</strong><small>m² · 2019</small><h3>Express Las Rejas</h3><p>Remodelación</p></div>
+          <div><strong>2.914</strong><small>m² · 2019</small><h3>Express Ciudad de Los Valles</h3><p>Supermercado nuevo</p></div>
+          <div><strong>2.356</strong><small>m² · 2019</small><h3>Express Lo Campino</h3><p>Habilitación</p></div>
+          <div><strong>~2.000</strong><small>m² · 2024</small><h3>Líder Express Panguipulli</h3><p>Proyecto de arquitectura</p></div>
+          <div><strong>~1.000</strong><small>m² · 2024</small><h3>SBA Vilcún</h3><p>Supermercado nuevo</p></div>
+        </div>
+        <p class="note">Proyectos para Walmart Chile con Felipe Cacho y Matías Espinoza como arquitectos a cargo, en sus cargos anteriores.</p>
+      </div>
+    </section>
+
+    <!-- Obras -->
+    <section id="obras" class="section dark">
+      <div class="wrap">
+        <p class="eyebrow accent-light">Obras ejecutadas</p>
+        <h2 class="h2">Habilitaciones ejecutadas por MDGN</h2>
+        <div class="works">
+          <figure>
+            <img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" loading="lazy">
+            <figcaption><h3>Nido Lucía Territoria</h3><p>Habilitación exteriores y recuperación de lobby · Santiago Centro · 1.600 m²</p></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy">
+            <figcaption><h3>Start-Up Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/obras/fundacion-chile.jpg" alt="Recepción y áreas comunes de las oficinas de Fundación Chile" loading="lazy">
+            <figcaption><h3>Fundación Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clientes -->
+    <section class="section sand">
+      <div class="wrap">
+        <p class="eyebrow">Clientes</p>
+        <h2 class="h2">Quienes confían en nosotros</h2>
+        <ul class="clients">
+          <li><img src="assets/clientes/walmart.png" alt="Walmart" loading="lazy"></li>
+          <li><img src="assets/clientes/territoria.png" alt="Territoria" loading="lazy"></li>
+          <li><img src="assets/clientes/regus.png" alt="Regus" loading="lazy"></li>
+          <li><img src="assets/clientes/enlasa.png" alt="Enlasa" loading="lazy"></li>
+          <li><img src="assets/clientes/startup-chile.png" alt="Start-Up Chile" loading="lazy"></li>
+          <li><img src="assets/clientes/fundacion-chile.png" alt="Fundación Chile" loading="lazy"></li>
+          <li><img src="assets/clientes/fondo-esperanza.png" alt="Fondo Esperanza" loading="lazy"></li>
+          <li><img src="assets/clientes/uniacc.png" alt="UNIACC" loading="lazy"></li>
+          <li><img src="assets/clientes/ola-hotel.png" alt="Olá Hotel" loading="lazy"></li>
+          <li><img src="assets/clientes/policomp.png" alt="Policomp" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="section cream">
+      <div class="wrap">
+        <p class="eyebrow">Equipo</p>
+        <h2 class="h2">Experiencia que respalda cada proyecto</h2>
+        <div class="team">
+          <article><img src="assets/equipo/javier-mondragon.jpg" alt="Retrato de Javier Mondragón" loading="lazy"><h3>Javier Mondragón</h3><p class="role">Gerente de Arquitectura y Construcción</p><p>Arquitecto con Distinción Máxima (UVM) y Diplomado en ITO. Ex Jefe de Arquitectura e Ingeniería de Walmart Chile (2017–2021).</p></article>
+          <article><img src="assets/equipo/felipe-cacho.jpg" alt="Retrato de Felipe Cacho" loading="lazy"><h3>Felipe Cacho</h3><p class="role">Jefe de Arquitectura</p><p>Arquitecto UC. Más de 15 años en arquitectura retail y cerca de 180.000 m² de proyectos a su cargo. Especialista en OGUC y permisos.</p></article>
+          <article><img src="assets/equipo/katya-torres.jpg" alt="Retrato de Katya Torres" loading="lazy"><h3>Katya Torres</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con especialización en regularizaciones. Prototipos comerciales Walmart ED25 y ED26, layouts y homologación de formatos.</p></article>
+          <article><img src="assets/equipo/valentina-mondragon.jpg" alt="Retrato de Valentina Mondragón" loading="lazy"><h3>Valentina Mondragón</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con certificación BIM. Prototipos Walmart ED25 y experiencia en proyectos industriales para Codelco y SIKA.</p></article>
+          <article><img src="assets/equipo/matias-espinoza.jpg" alt="Retrato de Matías Espinoza" loading="lazy"><h3>Matías Espinoza</h3><p class="role">Arquitecto</p><p>Arquitecto Universidad de Chile y ayudante de cátedra. Proyectos Líder Express y SBA, modelación BIM y tramitación municipal.</p></article>
+          <article><img src="assets/equipo/sofia-becerra.jpg" alt="Retrato de Sofía Becerra" loading="lazy"><h3>Sofía Becerra</h3><p class="role">Administración y Finanzas</p><p>Constructora Civil USACH y Contadora. Oficina técnica, APU y control de costos en habilitaciones para Territoria, Uniacc y Fundación Chile.</p></article>
+          <article><img src="assets/equipo/cristian-arevalo.jpg" alt="Retrato de Cristian Arévalo" loading="lazy"><h3>Cristian Arévalo</h3><p class="role">Jefe de Oficina Técnica</p><p>Constructor Civil e Ing. (E) en Geomensura. Administración de contratos y estados de pago; ex Mall Plaza, obras en 7 malls en operación.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section dark contact">
+      <div class="wrap">
+        <p class="eyebrow accent-light">Contacto</p>
+        <h2 class="display light">Conversemos tu próximo proyecto.</h2>
+        <div class="actions">
+          <a class="btn btn-accent" href="mailto:javier.mondragon@mdgn.cl?subject=Consulta%20desde%20mdgn.cl">Enviar correo</a>
+          <a class="btn btn-ghost-light" href="https://wa.me/56971392003" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="rule-cols three contact-cols">
+          <div>
+            <p class="label accent-light">Javier Mondragón</p>
+            <p>Arquitecto<br><a href="mailto:javier.mondragon@mdgn.cl">javier.mondragon@mdgn.cl</a><br><a href="tel:+56971392003">+56 9 7139 2003</a></p>
           </div>
-          <p class="contact-lead">Cuéntanos de tu proyecto y te respondemos a la brevedad.</p>
-          <div class="actions">
-            <a class="btn btn-inverse" href="mailto:javier.mondragon@mdgn.cl?subject=Consulta%20desde%20mdgn.cl">Enviar correo</a>
-            <a class="btn btn-line-light" href="https://wa.me/56971392003" target="_blank" rel="noopener">WhatsApp</a>
+          <div>
+            <p class="label accent-light">Oficina</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Alonso+de+C%C3%B3rdova+5870%2C+Las+Condes%2C+Santiago" target="_blank" rel="noopener">Alonso de Córdova 5870, of. 413<br>Las Condes, Santiago, Chile</a></p>
+          </div>
+          <div>
+            <p class="label accent-light">Grupo MDGN</p>
+            <p>MDGN Arquitectos SpA<br>MDGN Constructora SpA</p>
           </div>
         </div>
-        <dl class="contact-list">
-          <div>
-            <dt>Contacto</dt>
-            <dd>Javier Mondragón</dd>
-          </div>
-          <div>
-            <dt>Correo</dt>
-            <dd><a href="mailto:javier.mondragon@mdgn.cl">javier.mondragon@mdgn.cl</a></dd>
-          </div>
-          <div>
-            <dt>Teléfono</dt>
-            <dd><a href="tel:+56971392003">+56 9 7139 2003</a></dd>
-          </div>
-          <div>
-            <dt>Oficina</dt>
-            <dd><a href="https://www.google.com/maps/search/?api=1&query=Alonso+de+C%C3%B3rdova+5870%2C+Las+Condes%2C+Santiago" target="_blank" rel="noopener">Alonso de Córdova 5870, of. 413<br>Las Condes, Santiago, Chile</a></dd>
-          </div>
-        </dl>
       </div>
     </section>
 
@@ -179,12 +364,23 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span class="footer-mark">MDGN</span>
+      <img src="assets/logo-brochure.png" alt="MDGN" width="32" height="30">
       <span>Arquitectura y Construcción · Santiago, Chile</span>
-      <span>© <span id="year">2026</span></span>
+      <span>© <span id="year">2026</span> MDGN</span>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    nav.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+    });
+  </script>
 </body>
 </html>
