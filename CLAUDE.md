@@ -10,3 +10,7 @@ Sitio estático (HTML + CSS, sin build) publicado con GitHub Pages. El dueño (J
 Flujo de cambios: editar → mostrar vista previa → con aprobación del usuario, commit en español y `git push` a `main` (GitHub Pages publica solo).
 
 Reglas de contenido: no inventar proyectos, clientes, cifras ni testimonios; usar solo información entregada por el usuario.
+
+## Dominio
+- `www.mdgn.cl` (archivo `CNAME`). Dominio registrado en NIC Chile; DNS administrado en el hosting INC (ns01–ns04.inc.cl).
+- El correo es Google Workspace (MX smtp.google.com): nunca tocar registros MX ni TXT al cambiar DNS.
