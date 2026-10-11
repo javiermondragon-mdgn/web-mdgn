@@ -15,7 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261009">
+  <script>
+    /* Oculta los bloques animables solo si hay JS; si main.js no carga, se muestran todos a los 4 s */
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__MDGN__) document.documentElement.classList.remove('js'); }, 4000);
+  </script>
+  <script defer src="main.js?v=20261009"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,11 +41,12 @@
   </script>
 </head>
 <body>
+  <a class="skip" href="#nosotros">Saltar al contenido</a>
 
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="wrap header-inner">
       <a href="#inicio" class="brand" aria-label="MDGN, inicio">
-        <img src="assets/logo-brochure.png" alt="MDGN" width="46" height="43">
+        <img src="assets/logo-brochure.png" alt="MDGN" width="40" height="37">
         <span class="brand-sub">Arquitectura<br>y Construcción</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
@@ -50,6 +57,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
         <a href="#trayectoria">Trayectoria</a>
+        <a href="#obras">Obras</a>
         <a href="#equipo">Equipo</a>
         <a href="#contacto" class="nav-cta">Contacto</a>
       </nav>
@@ -59,83 +67,104 @@
   <main id="inicio">
 
     <!-- Portada -->
-    <section class="hero dark">
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
       <div class="wrap hero-inner">
-        <img class="hero-logo" src="assets/logo-brochure.png" alt="" width="160" height="148">
-        <h1>Expertos en habilitación de oficinas, espacios comerciales y corporativos</h1>
-        <p class="eyebrow accent-light">Arquitectura y construcción · Santiago, Chile</p>
-        <div class="actions">
-          <a class="btn btn-accent" href="#contacto">Conversemos tu proyecto</a>
-          <a class="btn btn-ghost-light" href="#obras">Ver obras</a>
+        <div class="hero-copy">
+          <p class="eyebrow accent-light hero-in" style="--d:.1s">Arquitectura y construcción · Santiago, Chile</p>
+          <h1 class="hero-title hero-in" style="--d:.25s">Expertos en habilitación de oficinas, espacios comerciales y corporativos</h1>
+          <div class="actions hero-in" style="--d:.45s">
+            <a class="btn btn-accent" href="#contacto">Conversemos tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost-light" href="#obras">Ver obras</a>
+          </div>
         </div>
+        <figure class="hero-media">
+          <img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" width="1400" height="958" fetchpriority="high">
+          <figcaption><span>Nido Lucía Territoria</span><span>1.600 m²</span></figcaption>
+        </figure>
+      </div>
+      <div class="wrap hero-foot">
+        <span>MDGN Arquitectos SpA</span>
+        <span>MDGN Constructora SpA</span>
+        <a href="#nosotros" class="scroll-cue">Desliza <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
     <!-- Quiénes somos -->
     <section id="nosotros" class="section cream">
-      <div class="wrap split">
-        <div>
-          <p class="eyebrow">Quiénes somos</p>
-          <h2 class="h2">Habilitamos espacios de trabajo y comercio listos para operar.</h2>
+      <div class="wrap sec-grid">
+        <div class="sec-label" data-reveal><span class="sec-num">01</span><p class="eyebrow">Quiénes somos</p></div>
+        <div class="sec-body">
+          <h2 class="h2" data-reveal>Habilitamos espacios de trabajo y comercio listos para operar.</h2>
+          <p class="body-lg" data-reveal>Somos especialistas en habilitación (fit-out) de oficinas, locales comerciales y espacios corporativos. MDGN Arquitectos SpA diseña y tramita; MDGN Constructora SpA ejecuta la obra gruesa y las terminaciones. Trabajamos en modalidad design and build: un solo equipo y un solo contrato del diseño a la entrega.</p>
         </div>
-        <p class="body-lg">Somos especialistas en habilitación (fit-out) de oficinas, locales comerciales y espacios corporativos. MDGN Arquitectos SpA diseña y tramita; MDGN Constructora SpA ejecuta la obra gruesa y las terminaciones. Trabajamos en modalidad design and build: un solo equipo y un solo contrato del diseño a la entrega.</p>
       </div>
     </section>
 
     <!-- Por qué MDGN -->
     <section class="section terracotta">
       <div class="wrap">
-        <p class="eyebrow on-accent">Por qué MDGN</p>
-        <h2 class="display">Diseñamos y habilitamos pensando en la operación.</h2>
-        <p class="body-lg narrow on-accent">Venimos de liderar arquitectura e ingeniería del lado del mandante. Por eso cada habilitación considera desde el inicio cómo se usará el espacio: flujos, estándares de marca, plazos de apertura y la convivencia con la operación existente.</p>
-        <div class="rule-cols three on-accent-rules">
-          <h3>Fit-out design and build</h3>
-          <h3>Obras sin detener la operación</h3>
-          <h3>Un solo interlocutor del diseño a la obra</h3>
+        <p class="eyebrow on-accent" data-reveal>Por qué MDGN</p>
+        <h2 class="display" data-reveal>Diseñamos y habilitamos pensando en la operación.</h2>
+        <p class="body-lg narrow" data-reveal>Venimos de liderar arquitectura e ingeniería del lado del mandante. Por eso cada habilitación considera desde el inicio cómo se usará el espacio: flujos, estándares de marca, plazos de apertura y la convivencia con la operación existente.</p>
+        <div class="pillars">
+          <div data-reveal><span>01</span><h3>Fit-out design and build</h3></div>
+          <div data-reveal style="--d:.1s"><span>02</span><h3>Obras sin detener la operación</h3></div>
+          <div data-reveal style="--d:.2s"><span>03</span><h3>Un solo interlocutor del diseño a la obra</h3></div>
         </div>
       </div>
     </section>
 
     <!-- Cifras -->
-    <section class="section sand">
+    <section class="section dark">
       <div class="wrap">
-        <p class="eyebrow">Trayectoria</p>
-        <h2 class="h2">MDGN en cifras</h2>
-        <h3 class="stats-title">Proyectos de arquitectura</h3>
-        <div class="stats">
-          <div><strong>+40</strong><span>encargos para Walmart Chile desde 2023 y otros clientes</span></div>
-          <div><strong>+180.000</strong><span>m² de proyectos retail a cargo del equipo</span></div>
-          <div><strong>+15</strong><span>años de experiencia en arquitectura retail</span></div>
-          <div><strong>+30</strong><span>supermercados habilitados o remodelados por el equipo</span></div>
+        <div class="sec-head">
+          <p class="eyebrow accent-light" data-reveal>Trayectoria</p>
+          <h2 class="h2" data-reveal>MDGN en cifras</h2>
         </div>
-        <h3 class="stats-title">Proyectos de construcción</h3>
-        <div class="stats">
-          <div><strong>+30</strong><span>encargos de construcción</span></div>
-          <div><strong>+10.000</strong><span>m² habilitados comerciales</span></div>
-          <div><strong>+15</strong><span>años de experiencia en obras de habilitación</span></div>
-          <div><strong>+25</strong><span>clientes atendidos</span></div>
+        <div class="stats-block" data-reveal>
+          <h3 class="stats-title">Proyectos de arquitectura</h3>
+          <div class="stats">
+            <div><strong data-count="40" data-prefix="+">+40</strong><span>encargos para Walmart Chile desde 2023 y otros clientes</span></div>
+            <div><strong data-count="180000" data-prefix="+">+180.000</strong><span>m² de proyectos retail a cargo del equipo</span></div>
+            <div><strong data-count="15" data-prefix="+">+15</strong><span>años de experiencia en arquitectura retail</span></div>
+            <div><strong data-count="30" data-prefix="+">+30</strong><span>supermercados habilitados o remodelados por el equipo</span></div>
+          </div>
+        </div>
+        <div class="stats-block" data-reveal>
+          <h3 class="stats-title">Proyectos de construcción</h3>
+          <div class="stats">
+            <div><strong data-count="30" data-prefix="+">+30</strong><span>encargos de construcción</span></div>
+            <div><strong data-count="10000" data-prefix="+">+10.000</strong><span>m² habilitados comerciales</span></div>
+            <div><strong data-count="15" data-prefix="+">+15</strong><span>años de experiencia en obras de habilitación</span></div>
+            <div><strong data-count="25" data-prefix="+">+25</strong><span>clientes atendidos</span></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Especialidades -->
-    <section id="servicios" class="section sand">
+    <section id="servicios" class="section cream">
       <div class="wrap">
-        <p class="eyebrow">Especialidades</p>
-        <h2 class="h2">Expertos en habilitación</h2>
-        <div class="cards three">
-          <article class="card">
-            <span class="card-num">01</span>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">02</span><p class="eyebrow">Especialidades</p></div>
+          <h2 class="h2" data-reveal>Expertos en habilitación</h2>
+        </div>
+        <div class="tiles three">
+          <article class="tile" data-reveal>
+            <span class="tile-num">01</span>
             <h3>Oficinas</h3>
             <p>Habilitación de plantas libres y remodelaciones: puestos de trabajo, salas de reunión, casinos y baños.</p>
           </article>
-          <article class="card">
-            <span class="card-num">02</span>
+          <article class="tile" data-reveal style="--d:.08s">
+            <span class="tile-num">02</span>
             <h3>Espacios comerciales</h3>
             <p>Locales, supermercados y strip centers, con estándares de marca y obras compatibles con la venta.</p>
           </article>
-          <article class="card">
-            <span class="card-num">03</span>
+          <article class="tile" data-reveal style="--d:.16s">
+            <span class="tile-num">03</span>
             <h3>Espacios corporativos</h3>
             <p>Sedes, centros de negocios, coworks y áreas comunes que reflejan la identidad de cada organización.</p>
           </article>
@@ -144,39 +173,43 @@
     </section>
 
     <!-- Servicios -->
-    <section class="section cream">
+    <section class="section sand">
       <div class="wrap">
-        <p class="eyebrow">Servicios</p>
-        <h2 class="h2">Todo el ciclo, del proyecto a la obra</h2>
-        <div class="grid-items">
-          <div><h3>Diseño y proyecto</h3><p>Anteproyecto, layout comercial y proyecto de arquitectura.</p></div>
-          <div><h3>Coordinación de especialidades</h3><p>Estructura, clima, electricidad, sanitaria y refrigeración.</p></div>
-          <div><h3>Permisos y trámites</h3><p>Permisos de edificación, recepción final y regularizaciones.</p></div>
-          <div><h3>Presupuesto y cubicación</h3><p>EETT, cubicaciones y presupuestos de obra en UF y CLP.</p></div>
-          <div><h3>Construcción</h3><p>Obra gruesa y terminaciones con MDGN Constructora.</p></div>
-          <div><h3>Remodelaciones por etapas</h3><p>Obras faseadas para remodelar sin detener la venta.</p></div>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">03</span><p class="eyebrow">Servicios</p></div>
+          <h2 class="h2" data-reveal>Todo el ciclo, del proyecto a la obra</h2>
+        </div>
+        <div class="items">
+          <div data-reveal><h3>Diseño y proyecto</h3><p>Anteproyecto, layout comercial y proyecto de arquitectura.</p></div>
+          <div data-reveal><h3>Coordinación de especialidades</h3><p>Estructura, clima, electricidad, sanitaria y refrigeración.</p></div>
+          <div data-reveal><h3>Permisos y trámites</h3><p>Permisos de edificación, recepción final y regularizaciones.</p></div>
+          <div data-reveal><h3>Presupuesto y cubicación</h3><p>EETT, cubicaciones y presupuestos de obra en UF y CLP.</p></div>
+          <div data-reveal><h3>Construcción</h3><p>Obra gruesa y terminaciones con MDGN Constructora.</p></div>
+          <div data-reveal><h3>Remodelaciones por etapas</h3><p>Obras faseadas para remodelar sin detener la venta.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Construcción -->
-    <section class="section sand">
+    <section class="section cream">
       <div class="wrap">
-        <p class="eyebrow">MDGN Constructora</p>
-        <h2 class="h2">Habilitaciones en modalidad design and build</h2>
-        <div class="cards three">
-          <article class="card">
-            <span class="card-num">01</span>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">04</span><p class="eyebrow">MDGN Constructora</p></div>
+          <h2 class="h2" data-reveal>Habilitaciones en modalidad design and build</h2>
+        </div>
+        <div class="tiles three">
+          <article class="tile" data-reveal>
+            <span class="tile-num">01</span>
             <h3>Obra gruesa</h3>
             <p>Obras previas, demoliciones, tabiquería, losas y estructuras menores para ampliaciones y remodelaciones.</p>
           </article>
-          <article class="card">
-            <span class="card-num">02</span>
+          <article class="tile" data-reveal style="--d:.08s">
+            <span class="tile-num">02</span>
             <h3>Terminaciones</h3>
             <p>Pavimentos, cielos, revestimientos, pinturas, baños y mobiliario, con estándares de marca de cada operador.</p>
           </article>
-          <article class="card">
-            <span class="card-num">03</span>
+          <article class="tile" data-reveal style="--d:.16s">
+            <span class="tile-num">03</span>
             <h3>Especialidades</h3>
             <p>Clima, electricidad, datos, sanitaria y mobiliario coordinados en un solo contrato.</p>
           </article>
@@ -185,52 +218,61 @@
     </section>
 
     <!-- Proceso -->
-    <section id="proceso" class="section cream">
+    <section id="proceso" class="section dark">
       <div class="wrap">
-        <p class="eyebrow">Metodología</p>
-        <h2 class="h2">Cómo trabajamos, del diseño a la obra</h2>
-        <ol class="steps">
-          <li><span>01</span><h3>Diagnóstico</h3><p>Levantamiento, normativa y requerimientos de la operación.</p></li>
-          <li><span>02</span><h3>Proyecto</h3><p>Anteproyecto, proyecto y coordinación de especialidades.</p></li>
-          <li><span>03</span><h3>Permisos</h3><p>Tramitación municipal y aprobaciones del mandante.</p></li>
-          <li><span>04</span><h3>Presupuesto</h3><p>Cubicación, presupuesto de obra y Carta Gantt.</p></li>
-          <li><span>05</span><h3>Construcción</h3><p>Obra gruesa, terminaciones y especialidades con control de avance.</p></li>
-          <li><span>06</span><h3>Entrega</h3><p>Recepción de obra, observaciones resueltas y recepción final.</p></li>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">05</span><p class="eyebrow accent-light">Metodología</p></div>
+          <h2 class="h2" data-reveal>Cómo trabajamos, del diseño a la obra</h2>
+        </div>
+        <ol class="steps" data-steps>
+          <li data-reveal><span>01</span><h3>Diagnóstico</h3><p>Levantamiento, normativa y requerimientos de la operación.</p></li>
+          <li data-reveal style="--d:.06s"><span>02</span><h3>Proyecto</h3><p>Anteproyecto, proyecto y coordinación de especialidades.</p></li>
+          <li data-reveal style="--d:.12s"><span>03</span><h3>Permisos</h3><p>Tramitación municipal y aprobaciones del mandante.</p></li>
+          <li data-reveal style="--d:.18s"><span>04</span><h3>Presupuesto</h3><p>Cubicación, presupuesto de obra y Carta Gantt.</p></li>
+          <li data-reveal style="--d:.24s"><span>05</span><h3>Construcción</h3><p>Obra gruesa, terminaciones y especialidades con control de avance.</p></li>
+          <li data-reveal style="--d:.30s"><span>06</span><h3>Entrega</h3><p>Recepción de obra, observaciones resueltas y recepción final.</p></li>
         </ol>
       </div>
     </section>
 
     <!-- Control de obra -->
-    <section class="section cream tight-top">
+    <section class="section dark tight-top">
       <div class="wrap">
-        <p class="eyebrow">Gestión de obra</p>
-        <h2 class="h2">Plazo y costo bajo control</h2>
-        <div class="rule-cols three">
-          <div><h3>Programación</h3><p>Carta Gantt por partidas y plazos en días corridos acordados con el mandante.</p></div>
-          <div><h3>Control de avance</h3><p>Curva S y avance ponderado por capítulo, programado versus real.</p></div>
-          <div><h3>Relación con la ITO</h3><p>Reportes periódicos, libro de obra y estados de pago documentados.</p></div>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">06</span><p class="eyebrow accent-light">Gestión de obra</p></div>
+          <h2 class="h2" data-reveal>Plazo y costo bajo control</h2>
         </div>
-        <div class="banner">
-          <p class="eyebrow accent-light">Capítulos de control</p>
-          <p>Obras previas · Obra gruesa · Terminaciones · Mobiliario · Especialidades · Baños · Generales</p>
+        <div class="cols3">
+          <div data-reveal><h3>Programación</h3><p>Carta Gantt por partidas y plazos en días corridos acordados con el mandante.</p></div>
+          <div data-reveal style="--d:.08s"><h3>Control de avance</h3><p>Curva S y avance ponderado por capítulo, programado versus real.</p></div>
+          <div data-reveal style="--d:.16s"><h3>Relación con la ITO</h3><p>Reportes periódicos, libro de obra y estados de pago documentados.</p></div>
         </div>
       </div>
     </section>
+    <div class="marquee" aria-label="Capítulos de control: Obras previas, Obra gruesa, Terminaciones, Mobiliario, Especialidades, Baños, Generales">
+      <p class="marquee-label">Capítulos de control</p>
+      <div class="marquee-track" aria-hidden="true">
+        <span>Obras previas</span><span>Obra gruesa</span><span>Terminaciones</span><span>Mobiliario</span><span>Especialidades</span><span>Baños</span><span>Generales</span>
+        <span>Obras previas</span><span>Obra gruesa</span><span>Terminaciones</span><span>Mobiliario</span><span>Especialidades</span><span>Baños</span><span>Generales</span>
+      </div>
+    </div>
 
     <!-- Capacidades -->
     <section class="section sand">
       <div class="wrap">
-        <p class="eyebrow">Capacidades</p>
-        <h2 class="h2">Servicios especializados en retail</h2>
-        <div class="grid-items">
-          <div><h3>Prototipos de formato</h3><p>Desarrollo y actualización de prototipos y homologación de formatos.</p></div>
-          <div><h3>Microlayouts y cabidas</h3><p>Estudios de cabida y microlayout para locales nuevos y existentes.</p></div>
-          <div><h3>Roll outs de cadena</h3><p>Implementación estandarizada en múltiples locales: cajas, ascensores, marcas propias.</p></div>
-          <div><h3>Proyectos de frío</h3><p>Arquitectura asociada a sistemas de frío comercial en sala y trastienda.</p></div>
-          <div><h3>Permisos y normativa</h3><p>Expedientes PE, POM, MP y RF, regularizaciones y análisis OGUC.</p></div>
-          <div><h3>Levantamientos y BIM</h3><p>Levantamientos arquitectónicos y modelación BIM coordinada.</p></div>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">07</span><p class="eyebrow">Capacidades</p></div>
+          <h2 class="h2" data-reveal>Servicios especializados en retail</h2>
         </div>
-        <div class="rule-cols three strong-rule">
+        <div class="items">
+          <div data-reveal><h3>Prototipos de formato</h3><p>Desarrollo y actualización de prototipos y homologación de formatos.</p></div>
+          <div data-reveal><h3>Microlayouts y cabidas</h3><p>Estudios de cabida y microlayout para locales nuevos y existentes.</p></div>
+          <div data-reveal><h3>Roll outs de cadena</h3><p>Implementación estandarizada en múltiples locales: cajas, ascensores, marcas propias.</p></div>
+          <div data-reveal><h3>Proyectos de frío</h3><p>Arquitectura asociada a sistemas de frío comercial en sala y trastienda.</p></div>
+          <div data-reveal><h3>Permisos y normativa</h3><p>Expedientes PE, POM, MP y RF, regularizaciones y análisis OGUC.</p></div>
+          <div data-reveal><h3>Levantamientos y BIM</h3><p>Levantamientos arquitectónicos y modelación BIM coordinada.</p></div>
+        </div>
+        <div class="tools" data-reveal>
           <div><p class="label">Software</p><p>AutoCAD, Revit, ArchiCAD, SketchUp, Navisworks, Enscape, Twinmotion, V-Ray y Adobe.</p></div>
           <div><p class="label">Gestión</p><p>Carta Gantt, pipeline de proyectos, IBM Tririga y Microsoft Project.</p></div>
           <div><p class="label">Normativa</p><p>OGUC, LGUC, vías de evacuación, inmuebles patrimoniales y declaraciones juradas sustitutivas de permisos.</p></div>
@@ -241,56 +283,63 @@
     <!-- Trayectoria Walmart -->
     <section id="trayectoria" class="section cream">
       <div class="wrap">
-        <p class="eyebrow">Experiencia desde el mandante</p>
-        <h2 class="h2">Proyectos liderados en Walmart Chile, 2017–2021</h2>
-        <div class="rule-cols three">
-          <div><strong class="big">8</strong><h3>Habilitaciones</h3><p>Lider Calama, Concón, Lo Blanco, Talcahuano, San Felipe y Chiguayante; Express Pie Andino y Quilpué.</p></div>
-          <div><strong class="big">11</strong><h3>Remodelaciones</h3><p>Lider Puerto Montt, Osorno, Concepción, Los Morros, Independencia, Santa Rosa, Los Andes y Coronel; Express Pedro de Valdivia, Reñaca y Los Ángeles.</p></div>
-          <div><strong class="big">7</strong><h3>Prototipos y gestión</h3><p>Prototipos Lider, Express, SBA y Mayorista; cabidas Lider y Express; mejoras de andén de camiones; regularización municipal Lider Buenaventura.</p></div>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">08</span><p class="eyebrow">Experiencia desde el mandante</p></div>
+          <h2 class="h2" data-reveal>Proyectos liderados en Walmart Chile, 2017–2021</h2>
         </div>
-        <p class="note">Proyectos liderados por Javier Mondragón como Jefe de Arquitectura e Ingeniería de Walmart Chile.</p>
+        <div class="cols3 big-cols">
+          <div data-reveal><strong class="big" data-count="8">8</strong><h3>Habilitaciones</h3><p>Lider Calama, Concón, Lo Blanco, Talcahuano, San Felipe y Chiguayante; Express Pie Andino y Quilpué.</p></div>
+          <div data-reveal style="--d:.08s"><strong class="big" data-count="11">11</strong><h3>Remodelaciones</h3><p>Lider Puerto Montt, Osorno, Concepción, Los Morros, Independencia, Santa Rosa, Los Andes y Coronel; Express Pedro de Valdivia, Reñaca y Los Ángeles.</p></div>
+          <div data-reveal style="--d:.16s"><strong class="big" data-count="7">7</strong><h3>Prototipos y gestión</h3><p>Prototipos Lider, Express, SBA y Mayorista; cabidas Lider y Express; mejoras de andén de camiones; regularización municipal Lider Buenaventura.</p></div>
+        </div>
+        <p class="note" data-reveal>Proyectos liderados por Javier Mondragón como Jefe de Arquitectura e Ingeniería de Walmart Chile.</p>
       </div>
     </section>
 
     <!-- Proyectos del equipo -->
     <section class="section sand">
       <div class="wrap">
-        <p class="eyebrow">Experiencia del equipo</p>
-        <h2 class="h2">Proyectos de nuestro equipo</h2>
-        <div class="projects">
-          <div><strong>20.495</strong><small>m² · 2024</small><h3>Lider Biobío</h3><p>Remodelación omnicanal</p></div>
-          <div><strong>16.543</strong><small>m² · 2024</small><h3>Lider La Serena</h3><p>Remodelación omnicanal</p></div>
-          <div><strong>14.480</strong><small>m² · 2022</small><h3>Lider Puente Nuevo</h3><p>Remodelación omnicanal</p></div>
-          <div><strong>13.700</strong><small>m² · 2020</small><h3>Lider Limache</h3><p>Supermercado nuevo</p></div>
-          <div><strong>11.148</strong><small>m² · 2021</small><h3>Lider Coquimbo</h3><p>Reconstrucción EPC</p></div>
-          <div><strong>7.364</strong><small>m² · 2023</small><h3>Lider San Pedro</h3><p>Habilitación en centro comercial</p></div>
-          <div><strong>7.263</strong><small>m² · 2023</small><h3>Lider Talcahuano</h3><p>Habilitación en centro comercial</p></div>
-          <div><strong>3.200</strong><small>m² · 2019</small><h3>Express Las Rejas</h3><p>Remodelación</p></div>
-          <div><strong>2.914</strong><small>m² · 2019</small><h3>Express Ciudad de Los Valles</h3><p>Supermercado nuevo</p></div>
-          <div><strong>2.356</strong><small>m² · 2019</small><h3>Express Lo Campino</h3><p>Habilitación</p></div>
-          <div><strong>~2.000</strong><small>m² · 2024</small><h3>Líder Express Panguipulli</h3><p>Proyecto de arquitectura</p></div>
-          <div><strong>~1.000</strong><small>m² · 2024</small><h3>SBA Vilcún</h3><p>Supermercado nuevo</p></div>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">09</span><p class="eyebrow">Experiencia del equipo</p></div>
+          <h2 class="h2" data-reveal>Proyectos de nuestro equipo</h2>
         </div>
-        <p class="note">Proyectos para Walmart Chile con Felipe Cacho y Matías Espinoza como arquitectos a cargo, en sus cargos anteriores.</p>
+        <div class="ledger" role="table" aria-label="Proyectos del equipo">
+          <div class="ledger-row ledger-head" role="row"><span role="columnheader">Proyecto</span><span role="columnheader">Tipo</span><span role="columnheader">Año</span><span role="columnheader">Superficie</span></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Biobío</h3><span role="cell">Remodelación omnicanal</span><span role="cell">2024</span><strong role="cell">20.495 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider La Serena</h3><span role="cell">Remodelación omnicanal</span><span role="cell">2024</span><strong role="cell">16.543 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Puente Nuevo</h3><span role="cell">Remodelación omnicanal</span><span role="cell">2022</span><strong role="cell">14.480 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Limache</h3><span role="cell">Supermercado nuevo</span><span role="cell">2020</span><strong role="cell">13.700 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Coquimbo</h3><span role="cell">Reconstrucción EPC</span><span role="cell">2021</span><strong role="cell">11.148 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider San Pedro</h3><span role="cell">Habilitación en centro comercial</span><span role="cell">2023</span><strong role="cell">7.364 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Talcahuano</h3><span role="cell">Habilitación en centro comercial</span><span role="cell">2023</span><strong role="cell">7.263 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Express Las Rejas</h3><span role="cell">Remodelación</span><span role="cell">2019</span><strong role="cell">3.200 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Express Ciudad de Los Valles</h3><span role="cell">Supermercado nuevo</span><span role="cell">2019</span><strong role="cell">2.914 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Express Lo Campino</h3><span role="cell">Habilitación</span><span role="cell">2019</span><strong role="cell">2.356 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Líder Express Panguipulli</h3><span role="cell">Proyecto de arquitectura</span><span role="cell">2024</span><strong role="cell">~2.000 m²</strong></div>
+          <div class="ledger-row" role="row" data-reveal><h3 role="cell">SBA Vilcún</h3><span role="cell">Supermercado nuevo</span><span role="cell">2024</span><strong role="cell">~1.000 m²</strong></div>
+        </div>
+        <p class="note" data-reveal>Proyectos para Walmart Chile con Felipe Cacho y Matías Espinoza como arquitectos a cargo, en sus cargos anteriores.</p>
       </div>
     </section>
 
     <!-- Obras -->
     <section id="obras" class="section dark">
       <div class="wrap">
-        <p class="eyebrow accent-light">Obras ejecutadas</p>
-        <h2 class="h2">Habilitaciones ejecutadas por MDGN</h2>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">10</span><p class="eyebrow accent-light">Obras ejecutadas</p></div>
+          <h2 class="h2" data-reveal>Habilitaciones ejecutadas por MDGN</h2>
+        </div>
         <div class="works">
-          <figure>
-            <img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" loading="lazy">
+          <figure class="work work-lg" data-reveal>
+            <div class="work-img"><img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" loading="lazy" width="1400" height="958"></div>
             <figcaption><h3>Nido Lucía Territoria</h3><p>Habilitación exteriores y recuperación de lobby · Santiago Centro · 1.600 m²</p></figcaption>
           </figure>
-          <figure>
-            <img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy">
+          <figure class="work" data-reveal style="--d:.1s">
+            <div class="work-img"><img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy" width="1400" height="933"></div>
             <figcaption><h3>Start-Up Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
           </figure>
-          <figure>
-            <img src="assets/obras/fundacion-chile.jpg" alt="Recepción y áreas comunes de las oficinas de Fundación Chile" loading="lazy">
+          <figure class="work" data-reveal style="--d:.2s">
+            <div class="work-img"><img src="assets/obras/fundacion-chile.jpg" alt="Recepción y áreas comunes de las oficinas de Fundación Chile" loading="lazy" width="1400" height="1050"></div>
             <figcaption><h3>Fundación Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
           </figure>
         </div>
@@ -298,11 +347,13 @@
     </section>
 
     <!-- Clientes -->
-    <section class="section sand">
+    <section class="section cream">
       <div class="wrap">
-        <p class="eyebrow">Clientes</p>
-        <h2 class="h2">Quienes confían en nosotros</h2>
-        <ul class="clients">
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">11</span><p class="eyebrow">Clientes</p></div>
+          <h2 class="h2" data-reveal>Quienes confían en nosotros</h2>
+        </div>
+        <ul class="clients" data-reveal>
           <li><img src="assets/clientes/walmart.png" alt="Walmart" loading="lazy"></li>
           <li><img src="assets/clientes/territoria.png" alt="Territoria" loading="lazy"></li>
           <li><img src="assets/clientes/regus.png" alt="Regus" loading="lazy"></li>
@@ -318,32 +369,37 @@
     </section>
 
     <!-- Equipo -->
-    <section id="equipo" class="section cream">
+    <section id="equipo" class="section sand">
       <div class="wrap">
-        <p class="eyebrow">Equipo</p>
-        <h2 class="h2">Experiencia que respalda cada proyecto</h2>
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">12</span><p class="eyebrow">Equipo</p></div>
+          <h2 class="h2" data-reveal>Experiencia que respalda cada proyecto</h2>
+        </div>
         <div class="team">
-          <article><img src="assets/equipo/javier-mondragon.jpg" alt="Retrato de Javier Mondragón" loading="lazy"><h3>Javier Mondragón</h3><p class="role">Gerente de Arquitectura y Construcción</p><p>Arquitecto con Distinción Máxima (UVM) y Diplomado en ITO. Ex Jefe de Arquitectura e Ingeniería de Walmart Chile (2017–2021).</p></article>
-          <article><img src="assets/equipo/felipe-cacho.jpg" alt="Retrato de Felipe Cacho" loading="lazy"><h3>Felipe Cacho</h3><p class="role">Jefe de Arquitectura</p><p>Arquitecto UC. Más de 15 años en arquitectura retail y cerca de 180.000 m² de proyectos a su cargo. Especialista en OGUC y permisos.</p></article>
-          <article><img src="assets/equipo/katya-torres.jpg" alt="Retrato de Katya Torres" loading="lazy"><h3>Katya Torres</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con especialización en regularizaciones. Prototipos comerciales Walmart ED25 y ED26, layouts y homologación de formatos.</p></article>
-          <article><img src="assets/equipo/valentina-mondragon.jpg" alt="Retrato de Valentina Mondragón" loading="lazy"><h3>Valentina Mondragón</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con certificación BIM. Prototipos Walmart ED25 y experiencia en proyectos industriales para Codelco y SIKA.</p></article>
-          <article><img src="assets/equipo/matias-espinoza.jpg" alt="Retrato de Matías Espinoza" loading="lazy"><h3>Matías Espinoza</h3><p class="role">Arquitecto</p><p>Arquitecto Universidad de Chile y ayudante de cátedra. Proyectos Líder Express y SBA, modelación BIM y tramitación municipal.</p></article>
-          <article><img src="assets/equipo/sofia-becerra.jpg" alt="Retrato de Sofía Becerra" loading="lazy"><h3>Sofía Becerra</h3><p class="role">Administración y Finanzas</p><p>Constructora Civil USACH y Contadora. Oficina técnica, APU y control de costos en habilitaciones para Territoria, Uniacc y Fundación Chile.</p></article>
-          <article><img src="assets/equipo/cristian-arevalo.jpg" alt="Retrato de Cristian Arévalo" loading="lazy"><h3>Cristian Arévalo</h3><p class="role">Jefe de Oficina Técnica</p><p>Constructor Civil e Ing. (E) en Geomensura. Administración de contratos y estados de pago; ex Mall Plaza, obras en 7 malls en operación.</p></article>
+          <article data-reveal><div class="portrait"><img src="assets/equipo/javier-mondragon.jpg" alt="Retrato de Javier Mondragón" loading="lazy"></div><h3>Javier Mondragón</h3><p class="role">Gerente de Arquitectura y Construcción</p><p>Arquitecto con Distinción Máxima (UVM) y Diplomado en ITO. Ex Jefe de Arquitectura e Ingeniería de Walmart Chile (2017–2021).</p></article>
+          <article data-reveal style="--d:.06s"><div class="portrait"><img src="assets/equipo/felipe-cacho.jpg" alt="Retrato de Felipe Cacho" loading="lazy"></div><h3>Felipe Cacho</h3><p class="role">Jefe de Arquitectura</p><p>Arquitecto UC. Más de 15 años en arquitectura retail y cerca de 180.000 m² de proyectos a su cargo. Especialista en OGUC y permisos.</p></article>
+          <article data-reveal style="--d:.12s"><div class="portrait"><img src="assets/equipo/katya-torres.jpg" alt="Retrato de Katya Torres" loading="lazy"></div><h3>Katya Torres</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con especialización en regularizaciones. Prototipos comerciales Walmart ED25 y ED26, layouts y homologación de formatos.</p></article>
+          <article data-reveal style="--d:.18s"><div class="portrait"><img src="assets/equipo/valentina-mondragon.jpg" alt="Retrato de Valentina Mondragón" loading="lazy"></div><h3>Valentina Mondragón</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con certificación BIM. Prototipos Walmart ED25 y experiencia en proyectos industriales para Codelco y SIKA.</p></article>
+          <article data-reveal><div class="portrait"><img src="assets/equipo/matias-espinoza.jpg" alt="Retrato de Matías Espinoza" loading="lazy"></div><h3>Matías Espinoza</h3><p class="role">Arquitecto</p><p>Arquitecto Universidad de Chile y ayudante de cátedra. Proyectos Líder Express y SBA, modelación BIM y tramitación municipal.</p></article>
+          <article data-reveal style="--d:.06s"><div class="portrait"><img src="assets/equipo/sofia-becerra.jpg" alt="Retrato de Sofía Becerra" loading="lazy"></div><h3>Sofía Becerra</h3><p class="role">Administración y Finanzas</p><p>Constructora Civil USACH y Contadora. Oficina técnica, APU y control de costos en habilitaciones para Territoria, Uniacc y Fundación Chile.</p></article>
+          <article data-reveal style="--d:.12s"><div class="portrait"><img src="assets/equipo/cristian-arevalo.jpg" alt="Retrato de Cristian Arévalo" loading="lazy"></div><h3>Cristian Arévalo</h3><p class="role">Jefe de Oficina Técnica</p><p>Constructor Civil e Ing. (E) en Geomensura. Administración de contratos y estados de pago; ex Mall Plaza, obras en 7 malls en operación.</p></article>
         </div>
       </div>
     </section>
 
     <!-- Contacto -->
     <section id="contacto" class="section dark contact">
+      <div class="hero-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
       <div class="wrap">
-        <p class="eyebrow accent-light">Contacto</p>
-        <h2 class="display light">Conversemos tu próximo proyecto.</h2>
-        <div class="actions">
-          <a class="btn btn-accent" href="mailto:javier.mondragon@mdgn.cl?subject=Consulta%20desde%20mdgn.cl">Enviar correo</a>
+        <p class="eyebrow accent-light" data-reveal>Contacto</p>
+        <h2 class="display" data-reveal>Conversemos tu próximo proyecto.</h2>
+        <div class="actions" data-reveal>
+          <a class="btn btn-accent" href="mailto:javier.mondragon@mdgn.cl?subject=Consulta%20desde%20mdgn.cl">Enviar correo <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost-light" href="https://wa.me/56971392003" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-        <div class="rule-cols three contact-cols">
+        <div class="cols3 contact-cols" data-reveal>
           <div>
             <p class="label accent-light">Javier Mondragón</p>
             <p>Arquitecto<br><a href="mailto:javier.mondragon@mdgn.cl">javier.mondragon@mdgn.cl</a><br><a href="tel:+56971392003">+56 9 7139 2003</a></p>
@@ -370,17 +426,5 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-    nav.addEventListener('click', e => {
-      if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
-    });
-  </script>
 </body>
 </html>
