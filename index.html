@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MDGN · Arquitectura y Construcción</title>
-  <meta name="description" content="MDGN Arquitectura y Construcción: expertos en habilitación de oficinas, espacios comerciales y corporativos en modalidad design and build. Santiago, Chile.">
+  <meta name="description" content="MDGN: oficina de arquitectura especialista en el desarrollo de proyectos comerciales, supermercados, strip centers y oficinas, con constructora propia en modalidad design and build. Santiago, Chile.">
   <meta property="og:title" content="MDGN · Arquitectura y Construcción">
-  <meta property="og:description" content="Expertos en habilitación de oficinas, espacios comerciales y corporativos. Santiago, Chile.">
+  <meta property="og:description" content="Oficina de arquitectura especialista en proyectos comerciales, supermercados, strip centers y oficinas. Santiago, Chile.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo-512.png">
   <meta name="theme-color" content="#1b1e1c">
@@ -15,18 +15,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261009">
+  <link rel="stylesheet" href="styles.css?v=20261013">
   <script>
     /* Oculta los bloques animables solo si hay JS; si main.js no carga, se muestran todos a los 4 s */
     document.documentElement.classList.add('js');
     setTimeout(function () { if (!window.__MDGN__) document.documentElement.classList.remove('js'); }, 4000);
   </script>
-  <script defer src="main.js?v=20261009"></script>
+  <script defer src="main.js?v=20261013"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "MDGN Arquitectura y Construcción",
+    "description": "Oficina de arquitectura especialista en el desarrollo de proyectos comerciales, supermercados, strip centers y oficinas, con constructora propia.",
     "url": "https://www.mdgn.cl",
     "email": "javier.mondragon@mdgn.cl",
     "telephone": "+56971392003",
@@ -42,6 +43,8 @@
 </head>
 <body>
   <a class="skip" href="#nosotros">Saltar al contenido</a>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor-label">Ver</span></div>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
@@ -67,21 +70,25 @@
   <main id="inicio">
 
     <!-- Portada -->
-    <section class="hero">
+    <section class="hero" data-spotlight>
       <div class="hero-grid" aria-hidden="true">
         <span></span><span></span><span></span><span></span><span></span>
       </div>
       <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow accent-light hero-in" style="--d:.1s">Arquitectura y construcción · Santiago, Chile</p>
-          <h1 class="hero-title hero-in" style="--d:.25s">Expertos en habilitación de oficinas, espacios comerciales y corporativos</h1>
+          <p class="eyebrow accent-light hero-in" style="--d:.1s">Oficina de arquitectura y constructora · Santiago, Chile</p>
+          <h1 class="hero-title" data-split data-split-now>Arquitectura para proyectos comerciales y oficinas</h1>
+          <ul class="hero-tags hero-in" style="--d:.35s" aria-label="Especialidades">
+            <li>Supermercados</li><li>Strip centers</li><li>Locales comerciales</li><li>Oficinas</li>
+          </ul>
+          <p class="hero-lead hero-in" style="--d:.4s">Desarrollamos el proyecto de arquitectura, los permisos y la obra: un solo equipo del diseño a la entrega.</p>
           <div class="actions hero-in" style="--d:.45s">
-            <a class="btn btn-accent" href="#contacto">Conversemos tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="btn btn-ghost-light" href="#obras">Ver obras</a>
+            <a class="btn btn-accent" data-magnetic href="#contacto">Conversemos tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost-light" data-magnetic href="#obras">Ver obras</a>
           </div>
         </div>
         <figure class="hero-media">
-          <img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" width="1400" height="958" fetchpriority="high">
+          <img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" width="1400" height="958" fetchpriority="high" data-parallax>
           <figcaption><span>Nido Lucía Territoria</span><span>1.600 m²</span></figcaption>
         </figure>
       </div>
@@ -97,8 +104,9 @@
       <div class="wrap sec-grid">
         <div class="sec-label" data-reveal><span class="sec-num">01</span><p class="eyebrow">Quiénes somos</p></div>
         <div class="sec-body">
-          <h2 class="h2" data-reveal>Habilitamos espacios de trabajo y comercio listos para operar.</h2>
-          <p class="body-lg" data-reveal>Somos especialistas en habilitación (fit-out) de oficinas, locales comerciales y espacios corporativos. MDGN Arquitectos SpA diseña y tramita; MDGN Constructora SpA ejecuta la obra gruesa y las terminaciones. Trabajamos en modalidad design and build: un solo equipo y un solo contrato del diseño a la entrega.</p>
+          <h2 class="h2" data-split>Una oficina de arquitectura especializada en comercio y oficinas, con constructora propia.</h2>
+          <p class="body-lg" data-reveal>MDGN Arquitectos SpA es una oficina de arquitectura especialista en el desarrollo de proyectos comerciales: supermercados, strip centers, locales y oficinas. Nuestro equipo suma más de 15 años en arquitectura retail y cerca de 180.000 m² de proyectos a su cargo.</p>
+          <p class="body-lg" data-reveal>Con MDGN Constructora SpA ejecutamos la obra gruesa y las terminaciones. Trabajamos en modalidad design and build: un solo equipo y un solo contrato del diseño a la entrega.</p>
         </div>
       </div>
     </section>
@@ -107,7 +115,7 @@
     <section class="section terracotta">
       <div class="wrap">
         <p class="eyebrow on-accent" data-reveal>Por qué MDGN</p>
-        <h2 class="display" data-reveal>Diseñamos y habilitamos pensando en la operación.</h2>
+        <h2 class="display" data-split>Diseñamos y habilitamos pensando en la operación.</h2>
         <p class="body-lg narrow" data-reveal>Venimos de liderar arquitectura e ingeniería del lado del mandante. Por eso cada habilitación considera desde el inicio cómo se usará el espacio: flujos, estándares de marca, plazos de apertura y la convivencia con la operación existente.</p>
         <div class="pillars">
           <div data-reveal><span>01</span><h3>Fit-out design and build</h3></div>
@@ -122,7 +130,7 @@
       <div class="wrap">
         <div class="sec-head">
           <p class="eyebrow accent-light" data-reveal>Trayectoria</p>
-          <h2 class="h2" data-reveal>MDGN en cifras</h2>
+          <h2 class="h2" data-split>MDGN en cifras</h2>
         </div>
         <div class="stats-block" data-reveal>
           <h3 class="stats-title">Proyectos de arquitectura</h3>
@@ -150,23 +158,28 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">02</span><p class="eyebrow">Especialidades</p></div>
-          <h2 class="h2" data-reveal>Expertos en habilitación</h2>
+          <h2 class="h2" data-split>Arquitectura para el comercio y la oficina</h2>
         </div>
-        <div class="tiles three">
+        <div class="tiles four">
           <article class="tile" data-reveal>
             <span class="tile-num">01</span>
-            <h3>Oficinas</h3>
-            <p>Habilitación de plantas libres y remodelaciones: puestos de trabajo, salas de reunión, casinos y baños.</p>
+            <h3>Supermercados</h3>
+            <p>Supermercados nuevos, remodelaciones omnicanal y habilitaciones en centros comerciales, con prototipos de formato y proyectos de frío.</p>
           </article>
           <article class="tile" data-reveal style="--d:.08s">
             <span class="tile-num">02</span>
-            <h3>Espacios comerciales</h3>
-            <p>Locales, supermercados y strip centers, con estándares de marca y obras compatibles con la venta.</p>
+            <h3>Strip centers</h3>
+            <p>Anteproyecto, estudios de cabida y layout comercial, permisos de edificación y coordinación de especialidades.</p>
           </article>
           <article class="tile" data-reveal style="--d:.16s">
             <span class="tile-num">03</span>
-            <h3>Espacios corporativos</h3>
-            <p>Sedes, centros de negocios, coworks y áreas comunes que reflejan la identidad de cada organización.</p>
+            <h3>Locales comerciales</h3>
+            <p>Microlayouts, roll outs de cadena y estándares de marca, con obras compatibles con la venta.</p>
+          </article>
+          <article class="tile" data-reveal style="--d:.24s">
+            <span class="tile-num">04</span>
+            <h3>Oficinas</h3>
+            <p>Plantas libres, sedes, coworks y áreas comunes: puestos de trabajo, salas de reunión, casinos y baños.</p>
           </article>
         </div>
       </div>
@@ -177,7 +190,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">03</span><p class="eyebrow">Servicios</p></div>
-          <h2 class="h2" data-reveal>Todo el ciclo, del proyecto a la obra</h2>
+          <h2 class="h2" data-split>Todo el ciclo, del proyecto a la obra</h2>
         </div>
         <div class="items">
           <div data-reveal><h3>Diseño y proyecto</h3><p>Anteproyecto, layout comercial y proyecto de arquitectura.</p></div>
@@ -195,7 +208,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">04</span><p class="eyebrow">MDGN Constructora</p></div>
-          <h2 class="h2" data-reveal>Habilitaciones en modalidad design and build</h2>
+          <h2 class="h2" data-split>Habilitaciones en modalidad design and build</h2>
         </div>
         <div class="tiles three">
           <article class="tile" data-reveal>
@@ -222,7 +235,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">05</span><p class="eyebrow accent-light">Metodología</p></div>
-          <h2 class="h2" data-reveal>Cómo trabajamos, del diseño a la obra</h2>
+          <h2 class="h2" data-split>Cómo trabajamos, del diseño a la obra</h2>
         </div>
         <ol class="steps" data-steps>
           <li data-reveal><span>01</span><h3>Diagnóstico</h3><p>Levantamiento, normativa y requerimientos de la operación.</p></li>
@@ -240,7 +253,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">06</span><p class="eyebrow accent-light">Gestión de obra</p></div>
-          <h2 class="h2" data-reveal>Plazo y costo bajo control</h2>
+          <h2 class="h2" data-split>Plazo y costo bajo control</h2>
         </div>
         <div class="cols3">
           <div data-reveal><h3>Programación</h3><p>Carta Gantt por partidas y plazos en días corridos acordados con el mandante.</p></div>
@@ -262,7 +275,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">07</span><p class="eyebrow">Capacidades</p></div>
-          <h2 class="h2" data-reveal>Servicios especializados en retail</h2>
+          <h2 class="h2" data-split>Servicios especializados en retail</h2>
         </div>
         <div class="items">
           <div data-reveal><h3>Prototipos de formato</h3><p>Desarrollo y actualización de prototipos y homologación de formatos.</p></div>
@@ -285,7 +298,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">08</span><p class="eyebrow">Experiencia desde el mandante</p></div>
-          <h2 class="h2" data-reveal>Proyectos liderados en Walmart Chile, 2017–2021</h2>
+          <h2 class="h2" data-split>Proyectos liderados en Walmart Chile, 2017–2021</h2>
         </div>
         <div class="cols3 big-cols">
           <div data-reveal><strong class="big" data-count="8">8</strong><h3>Habilitaciones</h3><p>Lider Calama, Concón, Lo Blanco, Talcahuano, San Felipe y Chiguayante; Express Pie Andino y Quilpué.</p></div>
@@ -301,7 +314,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">09</span><p class="eyebrow">Experiencia del equipo</p></div>
-          <h2 class="h2" data-reveal>Proyectos de nuestro equipo</h2>
+          <h2 class="h2" data-split>Proyectos de nuestro equipo</h2>
         </div>
         <div class="ledger" role="table" aria-label="Proyectos del equipo">
           <div class="ledger-row ledger-head" role="row"><span role="columnheader">Proyecto</span><span role="columnheader">Tipo</span><span role="columnheader">Año</span><span role="columnheader">Superficie</span></div>
@@ -327,19 +340,19 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">10</span><p class="eyebrow accent-light">Obras ejecutadas</p></div>
-          <h2 class="h2" data-reveal>Habilitaciones ejecutadas por MDGN</h2>
+          <h2 class="h2" data-split>Habilitaciones ejecutadas por MDGN</h2>
         </div>
         <div class="works">
           <figure class="work work-lg" data-reveal>
-            <div class="work-img"><img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" loading="lazy" width="1400" height="958"></div>
+            <div class="work-img" data-cursor="Ver" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto"><img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" loading="lazy" width="1400" height="958"></div>
             <figcaption><h3>Nido Lucía Territoria</h3><p>Habilitación exteriores y recuperación de lobby · Santiago Centro · 1.600 m²</p></figcaption>
           </figure>
           <figure class="work" data-reveal style="--d:.1s">
-            <div class="work-img"><img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy" width="1400" height="933"></div>
+            <div class="work-img" data-cursor="Ver" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto"><img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy" width="1400" height="933"></div>
             <figcaption><h3>Start-Up Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
           </figure>
           <figure class="work" data-reveal style="--d:.2s">
-            <div class="work-img"><img src="assets/obras/fundacion-chile.jpg" alt="Recepción y áreas comunes de las oficinas de Fundación Chile" loading="lazy" width="1400" height="1050"></div>
+            <div class="work-img" data-cursor="Ver" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto"><img src="assets/obras/fundacion-chile.jpg" alt="Recepción y áreas comunes de las oficinas de Fundación Chile" loading="lazy" width="1400" height="1050"></div>
             <figcaption><h3>Fundación Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
           </figure>
         </div>
@@ -351,7 +364,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">11</span><p class="eyebrow">Clientes</p></div>
-          <h2 class="h2" data-reveal>Quienes confían en nosotros</h2>
+          <h2 class="h2" data-split>Quienes confían en nosotros</h2>
         </div>
         <ul class="clients" data-reveal>
           <li><img src="assets/clientes/walmart.png" alt="Walmart" loading="lazy"></li>
@@ -373,7 +386,7 @@
       <div class="wrap">
         <div class="sec-grid">
           <div class="sec-label" data-reveal><span class="sec-num">12</span><p class="eyebrow">Equipo</p></div>
-          <h2 class="h2" data-reveal>Experiencia que respalda cada proyecto</h2>
+          <h2 class="h2" data-split>Experiencia que respalda cada proyecto</h2>
         </div>
         <div class="team">
           <article data-reveal><div class="portrait"><img src="assets/equipo/javier-mondragon.jpg" alt="Retrato de Javier Mondragón" loading="lazy"></div><h3>Javier Mondragón</h3><p class="role">Gerente de Arquitectura y Construcción</p><p>Arquitecto con Distinción Máxima (UVM) y Diplomado en ITO. Ex Jefe de Arquitectura e Ingeniería de Walmart Chile (2017–2021).</p></article>
@@ -394,10 +407,10 @@
       </div>
       <div class="wrap">
         <p class="eyebrow accent-light" data-reveal>Contacto</p>
-        <h2 class="display" data-reveal>Conversemos tu próximo proyecto.</h2>
+        <h2 class="display" data-split>Conversemos tu próximo proyecto.</h2>
         <div class="actions" data-reveal>
-          <a class="btn btn-accent" href="mailto:javier.mondragon@mdgn.cl?subject=Consulta%20desde%20mdgn.cl">Enviar correo <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost-light" href="https://wa.me/56971392003" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-accent" data-magnetic href="mailto:javier.mondragon@mdgn.cl?subject=Consulta%20desde%20mdgn.cl">Enviar correo <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost-light" data-magnetic href="https://wa.me/56971392003" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="cols3 contact-cols" data-reveal>
           <div>
@@ -417,6 +430,11 @@
     </section>
 
   </main>
+
+  <dialog class="lightbox" aria-label="Foto ampliada">
+    <button class="lightbox-close" aria-label="Cerrar">×</button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+  </dialog>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
