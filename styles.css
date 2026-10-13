@@ -115,10 +115,12 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 @keyframes heroIn { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 /* Foto de fachada a pantalla completa, con velo para que el texto se lea */
 .hero-media { position: absolute; inset: 0; z-index: 0; margin: 0; overflow: hidden; animation: bgIn 1.6s ease both; }
-.hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: slowZoom 18s ease-out both; }
+.hero-move { position: absolute; inset: -24px; translate: calc(var(--hx, 0) * -18px) calc(var(--hy, 0) * -12px); transition: translate 1.2s var(--ease); }
+.hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: heroDrift 26s ease-in-out infinite alternate; }
 .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(27, 30, 28, .92) 0%, rgba(27, 30, 28, .78) 38%, rgba(27, 30, 28, .3) 75%, rgba(27, 30, 28, .2) 100%), linear-gradient(to top, rgba(27, 30, 28, .85) 0%, transparent 30%), linear-gradient(to bottom, rgba(27, 30, 28, .6) 0%, transparent 22%); }
 @keyframes bgIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slowZoom { from { transform: scale(1.18); } to { transform: scale(1.08); } }
+/* Movimiento lento tipo cámara: acercamiento y paneo suave que va y vuelve */
+@keyframes heroDrift { 0% { transform: scale(1.06) translate(0, 0); } 50% { transform: scale(1.14) translate(-1.6%, -1%); } 100% { transform: scale(1.1) translate(1.4%, .6%); } }
 .hero-foot { position: relative; z-index: 2; display: flex; gap: 32px; align-items: center; padding-top: 28px; padding-bottom: 28px; margin-top: clamp(32px, 5vh, 56px); font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted-light); }
 .hero-foot::before { content: ""; position: absolute; top: 0; left: var(--gutter); right: var(--gutter); border-top: 1px solid var(--line-light); }
 .hero-credit { margin-left: auto; color: rgba(243, 239, 231, .7); }
@@ -397,7 +399,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 
 /* Solo se desactivan los efectos intrusivos */
 @media (prefers-reduced-motion: reduce) {
-  .hero-media img { animation: none; transform: scale(1.08); }
+  .hero-media img { animation-duration: 45s; }
   .scroll-cue span { animation: none; }
   .marquee-track { animation-duration: 150s; }
 }

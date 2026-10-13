@@ -177,9 +177,15 @@
       var r = hero.getBoundingClientRect();
       hero.style.setProperty("--mx", (e.clientX - r.left) + "px");
       hero.style.setProperty("--my", (e.clientY - r.top) + "px");
+      hero.style.setProperty("--hx", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+      hero.style.setProperty("--hy", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
       hero.classList.add("is-lit");
     });
-    hero.addEventListener("mouseleave", function () { hero.classList.remove("is-lit"); });
+    hero.addEventListener("mouseleave", function () {
+      hero.classList.remove("is-lit");
+      hero.style.setProperty("--hx", 0);
+      hero.style.setProperty("--hy", 0);
+    });
   }
 
   /* Botones que se acercan levemente al cursor */
