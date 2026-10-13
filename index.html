@@ -15,13 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261014">
+  <link rel="stylesheet" href="styles.css?v=20261015">
   <script>
     /* Oculta los bloques animables solo si hay JS; si main.js no carga, se muestran todos a los 4 s */
     document.documentElement.classList.add('js');
     setTimeout(function () { if (!window.__MDGN__) document.documentElement.classList.remove('js'); }, 4000);
   </script>
-  <script defer src="main.js?v=20261014"></script>
+  <script defer src="main.js?v=20261015"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,6 +71,9 @@
 
     <!-- Portada -->
     <section class="hero" data-spotlight>
+      <figure class="hero-media">
+        <img src="assets/obras/nido-lucia-territoria.jpg" alt="Fachada del edificio Nido Lucía iluminada de noche, obra de MDGN" width="1400" height="958" fetchpriority="high" data-parallax>
+      </figure>
       <div class="wrap hero-inner">
         <div class="hero-copy">
           <p class="eyebrow accent-light hero-in" style="--d:.1s">Oficina de arquitectura y constructora · Santiago, Chile</p>
@@ -84,14 +87,11 @@
             <a class="btn btn-ghost-light" data-magnetic href="#obras">Ver obras</a>
           </div>
         </div>
-        <figure class="hero-media">
-          <img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" width="1400" height="958" fetchpriority="high" data-parallax>
-          <figcaption><span>Nido Lucía Territoria</span><span>1.600 m²</span></figcaption>
-        </figure>
       </div>
       <div class="wrap hero-foot">
         <span>MDGN Arquitectos SpA</span>
         <span>MDGN Constructora SpA</span>
+        <span class="hero-credit">Obra: Nido Lucía Territoria · 1.600 m²</span>
         <a href="#nosotros" class="scroll-cue">Desliza <span aria-hidden="true">↓</span></a>
       </div>
     </section>
