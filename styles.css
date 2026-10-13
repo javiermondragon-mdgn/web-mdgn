@@ -198,7 +198,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 /* Marquesina de capítulos */
 .marquee { background: var(--accent); color: var(--on-accent); padding: 28px 0 30px; overflow: hidden; }
 .marquee-label { max-width: var(--wrap); margin: 0 auto 12px; padding: 0 var(--gutter); font-family: var(--display); font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; opacity: .8; }
-.marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 70s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track span { font-family: var(--display); font-size: clamp(30px, 4vw, 56px); font-weight: 500; letter-spacing: -0.02em; white-space: nowrap; padding-right: .9em; }
 .marquee-track span::after { content: "·"; padding-left: .9em; opacity: .5; }
@@ -384,7 +384,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 @media (prefers-reduced-motion: reduce) {
   .hero-media img { animation: none; transform: scale(1.08); }
   .scroll-cue span { animation: none; }
-  .marquee-track { animation-duration: 90s; }
+  .marquee-track { animation-duration: 150s; }
 }
 
 /* Responsive */
