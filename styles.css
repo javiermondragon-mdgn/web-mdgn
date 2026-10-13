@@ -259,6 +259,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .contact .wrap { position: relative; }
 .contact .display { color: var(--cream); }
 .contact-cols { margin-top: clamp(64px, 9vw, 112px); }
+.contact .contact-cols, .contact .contact-cols > div { border: 0; }
 .contact-cols p { color: var(--muted-light); font-size: 17px; line-height: 1.7; }
 .contact-cols .label { margin-bottom: 12px; }
 .contact-cols a { text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%; transition: color .3s, background-size .45s var(--ease); }
