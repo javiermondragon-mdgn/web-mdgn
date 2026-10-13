@@ -238,10 +238,12 @@
       var fig = trigger.closest("figure");
       img.src = src.getAttribute("src");
       img.alt = src.alt;
-      var h3 = fig.querySelector("h3"), p = fig.querySelector("figcaption p");
+      var h3 = fig && fig.querySelector("h3"), p = fig && fig.querySelector("figcaption p");
+      var title = trigger.dataset.title || (h3 ? h3.textContent : "");
+      var sub = trigger.dataset.sub || (p ? p.textContent : "");
       cap.innerHTML = "";
-      if (h3) cap.appendChild(document.createTextNode(h3.textContent));
-      if (p) { var s = document.createElement("span"); s.textContent = p.textContent; cap.appendChild(s); }
+      if (title) cap.appendChild(document.createTextNode(title));
+      if (sub) { var s = document.createElement("span"); s.textContent = sub; cap.appendChild(s); }
       dlg.showModal();
     };
     document.querySelectorAll("[data-lightbox]").forEach(function (el) {

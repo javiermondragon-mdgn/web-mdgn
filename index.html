@@ -15,13 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261019">
+  <link rel="stylesheet" href="styles.css?v=20261023">
   <script>
     /* Oculta los bloques animables solo si hay JS; si main.js no carga, se muestran todos a los 4 s */
     document.documentElement.classList.add('js');
     setTimeout(function () { if (!window.__MDGN__) document.documentElement.classList.remove('js'); }, 4000);
   </script>
-  <script defer src="main.js?v=20261019"></script>
+  <script defer src="main.js?v=20261023"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -353,6 +353,26 @@
             <figcaption><h3>Fundación Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
           </figure>
         </div>
+
+        <article class="project">
+          <div class="project-info" data-reveal>
+            <p class="project-kicker">2023 · Vitacura, Santiago</p>
+            <h3>Oficinas Enlasa</h3>
+            <p class="project-sub">Mejoramiento oficinas y nuevo COR</p>
+            <p class="project-text">La remodelación consistió principalmente en la intervención puntual de algunos sectores, lo que permitió mejorar el espacio de trabajo central y lograr un mayor ingreso de luz natural. Además, se incorporó una nueva oficina de monitoreo COR, para lo cual se intervinieron tabiques y mobiliario existente. También se sumaron nuevas tecnologías en oficinas y salas de reuniones, que permiten mejorar la forma de trabajar acorde a los tiempos actuales.</p>
+            <dl class="project-data">
+              <div><dt>Ubicación</dt><dd>Vitacura, Santiago</dd></div>
+              <div><dt>Año</dt><dd>2023</dd></div>
+              <div><dt>Superficie</dt><dd>410 m²</dd></div>
+              <div><dt>Cliente</dt><dd>Enlasa Generación Chile S.A.</dd></div>
+            </dl>
+          </div>
+          <div class="project-gallery">
+            <div class="work-img is-main" data-reveal data-cursor="Ver" data-lightbox data-title="Oficinas Enlasa" data-sub="Espacio de trabajo central · Vitacura · 410 m²" tabindex="0" role="button" aria-label="Ampliar foto: Espacio de trabajo central de las oficinas Enlasa, con iluminación lineal y piso de madera"><img src="assets/obras/enlasa/enlasa-oficinas.jpg" alt="Espacio de trabajo central de las oficinas Enlasa, con iluminación lineal y piso de madera" loading="lazy" width="1600" height="1066"></div>
+            <div class="work-img " data-reveal style="--d:.1s" data-cursor="Ver" data-lightbox data-title="Oficinas Enlasa" data-sub="Nueva oficina de monitoreo COR" tabindex="0" role="button" aria-label="Ampliar foto: Nueva oficina de monitoreo COR de Enlasa, con muro de pantallas y puestos de operación"><img src="assets/obras/enlasa/enlasa-cor.jpg" alt="Nueva oficina de monitoreo COR de Enlasa, con muro de pantallas y puestos de operación" loading="lazy" width="1600" height="1066"></div>
+            <div class="work-img " data-reveal style="--d:.2s" data-cursor="Ver" data-lightbox data-title="Oficinas Enlasa" data-sub="Recepción" tabindex="0" role="button" aria-label="Ampliar foto: Recepción de las oficinas Enlasa con mesón negro y pantallas"><img src="assets/obras/enlasa/enlasa-recepcion.jpg" alt="Recepción de las oficinas Enlasa con mesón negro y pantallas" loading="lazy" width="1600" height="1066"></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -377,6 +397,32 @@
         </ul>
       </div>
     </section>
+
+    <!-- Opiniones de clientes: OCULTA hasta tener testimonios reales. Para activarla, quitar <template> y cambiar Equipo a 13. -->
+    <template id="opiniones-pendiente">
+    <section id="opiniones" class="section dark">
+      <div class="wrap">
+        <div class="sec-grid">
+          <div class="sec-label" data-reveal><span class="sec-num">12</span><p class="eyebrow accent-light">Opiniones</p></div>
+          <h2 class="h2" data-split>Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="quotes">
+          <figure class="quote" data-reveal>
+            <blockquote><p>[Texto del testimonio pendiente: opinión real del cliente]</p></blockquote>
+            <figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption>
+          </figure>
+          <figure class="quote" data-reveal style="--d:.1s">
+            <blockquote><p>[Texto del testimonio pendiente: opinión real del cliente]</p></blockquote>
+            <figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption>
+          </figure>
+          <figure class="quote" data-reveal style="--d:.2s">
+            <blockquote><p>[Texto del testimonio pendiente: opinión real del cliente]</p></blockquote>
+            <figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    </template>
 
     <!-- Equipo -->
     <section id="equipo" class="section sand">
