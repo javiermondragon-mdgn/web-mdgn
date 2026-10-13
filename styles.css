@@ -193,6 +193,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .dark .cols3 { border-color: var(--line-light); }
 .dark .cols3 > div + div { border-color: var(--line-light); }
 .dark .cols3 p { color: var(--muted-light); }
+.cases-label { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 4px 0 10px; }
+.cols3 .cases + .cases { margin-top: 8px; }
+.cases strong { color: var(--text); font-weight: 600; }
 .big { display: block; font-family: var(--display); font-size: clamp(64px, 8vw, 120px); font-weight: 600; letter-spacing: -0.04em; line-height: .9; color: var(--accent); margin-bottom: 24px; }
 
 /* Marquesina de capítulos */
