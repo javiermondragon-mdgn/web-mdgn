@@ -250,6 +250,10 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .project-gallery .is-main { grid-column: 1 / -1; }
 .project-gallery.is-three { grid-template-columns: repeat(3, 1fr); }
 .project.is-reverse { grid-template-columns: 7fr 5fr; }
+.project-gallery.has-portrait { grid-template-columns: 3fr 2fr; }
+.project-gallery.has-portrait .is-main { grid-column: 1; }
+.project-gallery.has-portrait .is-tall { grid-column: 2; grid-row: 1 / span 2; }
+.project-gallery.has-portrait .is-tall img { aspect-ratio: auto; height: 100%; }
 .project.is-reverse .project-info { order: 2; }
 .project-gallery img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform 1.1s var(--ease), filter .6s; filter: saturate(.9); }
 .project-gallery .work-img:hover img { transform: scale(1.05); filter: saturate(1); }
