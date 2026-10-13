@@ -304,6 +304,17 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .lightbox-close { position: absolute; top: -48px; right: 0; width: 40px; height: 40px; background: none; border: 1px solid rgba(243, 239, 231, .4); color: var(--cream); font-size: 24px; line-height: 1; cursor: pointer; transition: background-color .3s, color .3s; }
 .lightbox-close:hover { background: var(--cream); color: var(--dark); }
 
+/* Botón flotante de WhatsApp */
+.btn svg { flex: none; }
+.wa-float { position: fixed; right: clamp(16px, 2.5vw, 32px); bottom: clamp(16px, 2.5vw, 32px); z-index: 35; display: inline-flex; align-items: center; gap: 0; height: 56px; padding: 0 17px; background: var(--accent); color: var(--cream); text-decoration: none; font-family: var(--display); font-size: 14px; font-weight: 600; box-shadow: 0 10px 30px rgba(27, 30, 28, .28); animation: waIn .8s var(--ease) 1.2s both; transition: background-color .3s, gap .45s var(--ease), padding .45s var(--ease); }
+.wa-float svg { width: 22px; height: 22px; }
+.wa-float-label { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .45s var(--ease); }
+.wa-float:hover, .wa-float:focus-visible { background: var(--accent-dark); gap: 10px; padding: 0 20px; }
+.wa-float:hover .wa-float-label, .wa-float:focus-visible .wa-float-label { max-width: 120px; }
+.menu-open ~ .wa-float, body:has(.nav.open) .wa-float { display: none; }
+.hero-foot, .footer-inner { padding-right: calc(var(--gutter) + 72px); }
+@keyframes waIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
 /* Barra de avance de lectura */
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40; background: var(--accent-light); transform: scaleX(var(--p, 0)); transform-origin: left; pointer-events: none; }
 
