@@ -349,17 +349,39 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 /* Foto ampliada de obras */
 .work-img[data-lightbox] { cursor: zoom-in; }
 .has-cursor .work-img[data-lightbox] { cursor: none; }
-.lightbox { margin: auto; padding: 0; border: 0; background: transparent; max-width: min(92vw, 1400px); max-height: 92vh; overflow: visible; }
-.lightbox::backdrop { background: rgba(27, 30, 28, .92); }
-.lightbox[open] { animation: lbIn .5s var(--ease); }
+/* Carrusel de fotos del proyecto (pantalla completa) */
+.lightbox { margin: 0; padding: clamp(14px, 2.4vw, 28px); border: 0; background: rgba(20, 22, 21, .97); width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; color: var(--cream); overflow: hidden; }
+.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 14px; animation: lbIn .5s var(--ease); }
+.lightbox::backdrop { background: rgba(20, 22, 21, .96); }
 .lightbox[open]::backdrop { animation: lbFade .4s ease; }
 @keyframes lbIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes lbFade { from { opacity: 0; } }
-.lightbox img { max-width: 100%; max-height: 82vh; width: auto; margin: 0 auto; }
-.lightbox figcaption { color: var(--cream); padding-top: 14px; font-family: var(--display); font-size: 16px; }
-.lightbox figcaption span { display: block; color: var(--muted-light); font-family: var(--body); font-size: 14px; margin-top: 4px; }
-.lightbox-close { position: absolute; top: -48px; right: 0; width: 40px; height: 40px; background: none; border: 1px solid rgba(243, 239, 231, .4); color: var(--cream); font-size: 24px; line-height: 1; cursor: pointer; transition: background-color .3s, color .3s; }
+.lb-top { display: flex; align-items: center; justify-content: space-between; }
+.lb-count { font-family: var(--display); font-size: 13px; font-weight: 600; letter-spacing: .16em; color: var(--muted-light); font-variant-numeric: tabular-nums; }
+.lightbox-close { width: 44px; height: 44px; background: none; border: 1px solid rgba(243, 239, 231, .4); color: var(--cream); font-size: 26px; line-height: 1; cursor: pointer; transition: background-color .3s, color .3s; }
 .lightbox-close:hover { background: var(--cream); color: var(--dark); }
+.lb-stage { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(8px, 2vw, 24px); min-height: 0; touch-action: pan-y; }
+.lb-stage figure { position: relative; margin: 0; height: 100%; min-height: 0; }
+.lb-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .35s ease, transform .5s var(--ease); }
+.lb-stage img.is-out { opacity: 0; transform: translateX(var(--dir, 20px)); }
+.lb-nav { width: 52px; height: 52px; display: grid; place-items: center; background: rgba(243, 239, 231, .08); border: 1px solid rgba(243, 239, 231, .3); color: var(--cream); font-size: 22px; cursor: pointer; transition: background-color .3s, border-color .3s, color .3s; }
+.lb-nav:hover { background: var(--accent); border-color: var(--accent); }
+.lb-nav[hidden] { display: none; }
+.lb-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.lb-caption { font-family: var(--display); font-size: 17px; }
+.lb-caption span { display: block; color: var(--muted-light); font-family: var(--body); font-size: 14px; margin-top: 4px; }
+.lb-thumbs { display: flex; gap: 8px; overflow-x: auto; max-width: 100%; }
+.lb-thumbs button { flex: none; width: 72px; height: 50px; padding: 0; border: 2px solid transparent; background: none; cursor: pointer; opacity: .5; transition: opacity .3s, border-color .3s; }
+.lb-thumbs button img { width: 100%; height: 100%; object-fit: cover; }
+.lb-thumbs button:hover { opacity: .85; }
+.lb-thumbs button[aria-selected="true"] { opacity: 1; border-color: var(--accent-light); }
+@media (max-width: 700px) {
+  .lb-stage { grid-template-columns: minmax(0, 1fr); }
+  .lb-nav { position: absolute; z-index: 1; top: 50%; translate: 0 -50%; width: 44px; height: 44px; background: rgba(27, 30, 28, .6); }
+  .lb-prev { left: 0; }
+  .lb-next { right: 0; }
+  .lb-thumbs button { width: 56px; height: 40px; }
+}
 
 /* Botón flotante de WhatsApp */
 .btn svg { flex: none; }
