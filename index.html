@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>MDGN · Arquitectura y Construcción</title>
   <meta name="description" content="MDGN: oficina de arquitectura especialista en el desarrollo de proyectos comerciales, supermercados, strip centers y oficinas, con constructora propia en modalidad design and build. Santiago, Chile.">
   <meta property="og:title" content="MDGN · Arquitectura y Construcción">
@@ -12,16 +14,10 @@
   <meta name="theme-color" content="#1b1e1c">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261036">
-  <script>
-    /* Oculta los bloques animables solo si hay JS; si main.js no carga, se muestran todos a los 4 s */
-    document.documentElement.classList.add('js');
-    setTimeout(function () { if (!window.__MDGN__) document.documentElement.classList.remove('js'); }, 4000);
-  </script>
-  <script defer src="main.js?v=20261036"></script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css?v=20261038">
+  <link rel="stylesheet" href="styles.css?v=20261038">
+  <script src="init.js?v=20261038"></script>
+  <script defer src="main.js?v=20261038"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -528,6 +524,7 @@
             </ul>
           </div>
         </div>
+        <p class="contact-privacy" data-reveal>Los datos que nos envíes por correo, teléfono o WhatsApp se usan solo para responder tu consulta y preparar una propuesta. Más información en la <a href="privacidad.html">Política de privacidad</a>.</p>
       </div>
     </section>
 
@@ -556,6 +553,9 @@
       <img src="assets/logo-brochure.png" alt="MDGN" width="32" height="30">
       <span>Arquitectura y Construcción · Santiago, Chile</span>
       <span>© <span id="year">2026</span> MDGN</span>
+    </div>
+    <div class="wrap footer-legal">
+      <nav aria-label="Información legal"><a href="privacidad.html">Política de privacidad</a><a href="cookies.html">Política de cookies</a><a href="terminos.html">Términos y condiciones</a><a href="datos-personales.html">Protección de datos personales</a></nav>
     </div>
   </footer>
 

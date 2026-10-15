@@ -326,6 +326,46 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .site-footer { background: var(--dark); color: var(--muted-light); border-top: 1px solid var(--line-light); font-size: 14px; }
 .footer-inner { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; }
 
+/* Información legal: enlaces del pie, aviso en contacto y páginas legales */
+.footer-legal { padding-top: 0; padding-bottom: 28px; }
+.footer-legal nav { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 18px; border-top: 1px solid var(--line-light); font-size: 13px; }
+.footer-legal a { color: var(--muted-light); text-decoration: none; transition: color .25s; }
+.footer-legal a:hover, .footer-legal a[aria-current="page"] { color: var(--cream); text-decoration: underline; text-underline-offset: 4px; }
+.contact-privacy { margin-top: clamp(40px, 5vw, 64px); max-width: 70ch; font-size: 14px; color: var(--muted-light); }
+.contact-privacy a { color: var(--cream); text-underline-offset: 3px; }
+
+.legal-back { color: var(--muted-light); text-decoration: none; font-size: 15px; font-weight: 500; transition: color .25s; }
+.legal-back:hover { color: var(--cream); }
+.legal-main { background: var(--cream); padding: calc(var(--header-h) + clamp(48px, 7vw, 96px)) 0 clamp(72px, 9vw, 120px); }
+.legal { max-width: 820px; }
+.legal h1 { font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.03em; margin-bottom: 20px; text-wrap: balance; }
+.legal-lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--muted); max-width: 60ch; }
+.legal-updated { margin-top: 16px; padding-bottom: 32px; border-bottom: 1px solid var(--line-strong); font-size: 14px; color: var(--muted); }
+.legal h2 { font-size: clamp(22px, 2.2vw, 28px); margin: 48px 0 14px; }
+.legal h3 { font-size: 18px; margin: 28px 0 10px; }
+.legal p, .legal li { color: var(--muted); line-height: 1.7; }
+.legal p + p { margin-top: 12px; }
+.legal ul, .legal ol { margin: 12px 0; padding-left: 22px; }
+.legal ul { list-style: disc; }
+.legal ol { list-style: decimal; }
+.legal li + li { margin-top: 6px; }
+.legal a:not(.btn) { color: var(--accent); text-underline-offset: 3px; }
+.legal strong { color: var(--text); }
+.legal-id { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; margin: 20px 0 8px; padding: 24px; background: var(--sand); }
+.legal-id dt { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.legal-id dd { margin: 0; color: var(--text); }
+.legal-table { margin: 16px 0; overflow-x: auto; }
+.legal table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.legal th { text-align: left; font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line-strong); }
+.legal td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; }
+.legal td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+.legal .btn { margin-top: 24px; }
+mark.pendiente { background: rgba(224, 137, 90, .3); color: var(--accent-dark); font-weight: 600; padding: 0 4px; }
+@media (max-width: 560px) {
+  .legal-id { grid-template-columns: 1fr; padding: 20px; }
+  .legal td:first-child { white-space: normal; }
+}
+
 /* Aparición al hacer scroll (el contenido es visible sin JS: solo se oculta cuando main.js marca <html class="js">) */
 .js [data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
 .js [data-reveal].is-revealed { opacity: 1; transform: none; }
@@ -392,7 +432,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .wa-float:hover, .wa-float:focus-visible { background: #128c7e; gap: 10px; padding: 0 20px; }
 .wa-float:hover .wa-float-label, .wa-float:focus-visible .wa-float-label { max-width: 120px; }
 .menu-open ~ .wa-float, body:has(.nav.open) .wa-float { display: none; }
-.hero-foot, .footer-inner { padding-right: calc(var(--gutter) + 72px); }
+.hero-foot, .footer-inner, .footer-legal { padding-right: calc(var(--gutter) + 72px); }
 @keyframes waIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
 /* Barra de avance de lectura */
