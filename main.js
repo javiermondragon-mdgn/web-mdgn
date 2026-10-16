@@ -285,6 +285,13 @@
       var gallery = trigger.closest(".project-gallery");
       var els = gallery ? Array.prototype.slice.call(gallery.querySelectorAll("[data-lightbox]")) : [trigger];
       items = els.map(describe);
+      /* Fichas de la portada: las demás fotos del proyecto vienen en una lista oculta junto a la foto principal */
+      var fig = trigger.closest("figure");
+      if (!gallery && fig) {
+        Array.prototype.forEach.call(fig.querySelectorAll(".work-more [data-src]"), function (li) {
+          items.push({ src: li.dataset.src, alt: li.dataset.alt || "", title: items[0].title, sub: li.dataset.sub || "" });
+        });
+      }
       var multi = items.length > 1;
       prev.hidden = next.hidden = !multi;
       thumbs.innerHTML = "";
