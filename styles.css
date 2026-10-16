@@ -401,8 +401,10 @@ mark.pendiente { background: rgba(224, 137, 90, .3); color: var(--accent-dark); 
 .lightbox-close { width: 44px; height: 44px; background: none; border: 1px solid rgba(243, 239, 231, .4); color: var(--cream); font-size: 26px; line-height: 1; cursor: pointer; transition: background-color .3s, color .3s; }
 .lightbox-close:hover { background: var(--cream); color: var(--dark); }
 .lb-stage { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(8px, 2vw, 24px); min-height: 0; touch-action: pan-y; }
-.lb-stage figure { position: relative; margin: 0; height: 100%; min-height: 0; }
-.lb-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .35s ease, transform .5s var(--ease); }
+/* La foto se dimensiona contra el escenario (posición absoluta), no con alturas en %:
+   Safari no resuelve esas alturas dentro de esta grilla y la dejaba en 0 (pantalla negra). */
+.lb-stage figure { position: static; margin: 0; }
+.lb-stage img { position: absolute; top: 0; left: 76px; width: calc(100% - 152px); height: 100%; object-fit: contain; transition: opacity .35s ease, transform .5s var(--ease); }
 .lb-stage img.is-out { opacity: 0; transform: translateX(var(--dir, 20px)); }
 .lb-nav { width: 52px; height: 52px; display: grid; place-items: center; background: rgba(243, 239, 231, .08); border: 1px solid rgba(243, 239, 231, .3); color: var(--cream); font-size: 22px; cursor: pointer; transition: background-color .3s, border-color .3s, color .3s; }
 .lb-nav:hover { background: var(--accent); border-color: var(--accent); }
@@ -417,6 +419,7 @@ mark.pendiente { background: rgba(224, 137, 90, .3); color: var(--accent-dark); 
 .lb-thumbs button[aria-selected="true"] { opacity: 1; border-color: var(--accent-light); }
 @media (max-width: 700px) {
   .lb-stage { grid-template-columns: minmax(0, 1fr); }
+  .lb-stage img { left: 0; width: 100%; }
   .lb-nav { position: absolute; z-index: 1; top: 50%; translate: 0 -50%; width: 44px; height: 44px; background: rgba(27, 30, 28, .6); }
   .lb-prev { left: 0; }
   .lb-next { right: 0; }
