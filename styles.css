@@ -308,6 +308,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .case-card:hover .case-card-img img { transform: scale(1.05); filter: saturate(1); }
 .case-card-body { padding-top: 18px; margin-top: 18px; border-top: 1px solid var(--line-light); }
 .case-card h3 { font-size: 22px; margin-bottom: 6px; }
+.case-card-tag, .work .work-tag { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 8px; }
+.on-light .case-card-tag { color: var(--accent); }
+.case-data .text-link { margin-top: 0; }
 .case-card p { color: var(--muted-light); font-size: 15px; }
 .case-card-link { display: inline-flex; gap: 8px; margin-top: 14px; color: var(--accent-light); font-weight: 600; font-size: 15px; }
 .case-card-link .arrow { transition: transform .3s var(--ease); }
