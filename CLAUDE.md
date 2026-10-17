@@ -11,6 +11,7 @@ Sitio estático (HTML + CSS, sin build) publicado con GitHub Pages. El dueño (J
 - SEO: cada página tiene `<title>`, descripción, canonical y Open Graph propios (URLs absolutas a https://www.mdgn.cl). Al agregar una página, sumarla a `sitemap.xml`.
 - Páginas legales: `privacidad.html`, `cookies.html`, `terminos.html`, `datos-personales.html` y `404.html` (mismo diseño; enlazadas en el pie). Los datos pendientes de la empresa van marcados con `<mark class="pendiente">`: no publicar mientras queden marcas.
 - Seguridad: cada página tiene una Content-Security-Policy en `<meta>` que solo permite recursos del propio sitio. No agregar scripts inline, `onclick`, CDNs, Google Fonts, analítica ni contenidos insertados (mapas, videos) sin actualizar la CSP y, si usan cookies, la Política de cookies y un aviso de consentimiento.
+- Desplazamiento con inercia: `lib/lenis.min.js` (Lenis 1.1.20, MIT, alojada en el sitio), cargada antes de `main.js` en portada, `design-build/` y `obras/*/`. Solo actúa con mouse/trackpad; en táctiles queda el scroll nativo. Para desactivarla: `SMOOTH_SCROLL = false` en `main.js`. Elementos con scroll propio llevan `data-lenis-prevent`.
 - Tipografías alojadas en `assets/fonts/` (sin Google Fonts) para no enviar datos de visitantes a terceros. `init.js` reemplaza el antiguo script inline.
 - `assets/`: logo (`logo-brochure.png`, crema sobre transparente), `obras/`, `clientes/`, `equipo/`.
 - Vista previa local: configuración "web" en `.claude/launch.json` (puerto 8080).

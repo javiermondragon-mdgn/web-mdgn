@@ -451,7 +451,7 @@ mark.pendiente { background: rgba(224, 137, 90, .3); color: var(--accent-dark); 
 }
 
 /* Aparición al hacer scroll (el contenido es visible sin JS: solo se oculta cuando main.js marca <html class="js">) */
-.js [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .6s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0s); }
+.js [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .7s cubic-bezier(.25, .1, .25, 1), transform .9s var(--ease); transition-delay: var(--d, 0s); }
 .js [data-reveal].is-revealed { opacity: 1; transform: none; }
 .reveal[data-split] { opacity: 1; transform: none; }
 
@@ -634,6 +634,12 @@ mark.pendiente { background: rgba(224, 137, 90, .3); color: var(--accent-dark); 
   .btn { padding: 16px 22px; }
   .hero-credit { font-size: 10px; letter-spacing: .1em; }
 }
+
+/* Desplazamiento con inercia (Lenis): solo con mouse o trackpad; en pantallas táctiles se usa el scroll nativo */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
 
 /* Mientras se desplaza la página se desactivan los efectos de mouse: evita redibujar fotos grandes a mitad del movimiento */
 html.is-scrolling main, html.is-scrolling .site-footer { pointer-events: none; }

@@ -5,6 +5,10 @@
 
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
+  /* Desplazamiento con inercia (Lenis). Para volver al scroll nativo del navegador, cambiar a false. */
+  var SMOOTH_SCROLL = true;
+  var lenis = null;
+
   function safe(fn, name) {
     try { fn(); } catch (e) { console.warn("[MDGN] " + name + " falló:", e); }
   }
@@ -41,6 +45,29 @@
     requestAnimationFrame(frame);
   }
 
+  /* Inercia al desplazar con mouse o trackpad (en táctiles queda el scroll nativo) */
+  function initSmoothScroll() {
+    if (!SMOOTH_SCROLL || !finePointer || typeof window.Lenis !== "function") return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    lenis = new window.Lenis({ lerp: reduced ? 0.2 : 0.1, smoothWheel: true, wheelMultiplier: 1 });
+    window.__lenis = lenis;
+    var raf = function (t) { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    /* Enlaces a secciones de la misma página: deslizamiento suave descontando la cabecera */
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href*="#"]');
+      if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      var url = new URL(a.href, location.href);
+      if (url.pathname !== location.pathname || !url.hash || url.hash === "#") return;
+      var el = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (!el) return;
+      e.preventDefault();
+      var header = document.querySelector("[data-header]");
+      lenis.scrollTo(el, { offset: -(header ? header.offsetHeight : 0), duration: 1.2 });
+      history.pushState(null, "", url.hash);
+    });
+  }
+
   /* Header transparente sobre la portada, sólido al hacer scroll */
   function initHeader() {
     var header = document.querySelector("[data-header]");
@@ -73,6 +100,7 @@
       toggle.setAttribute("aria-expanded", open);
       toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
       document.body.style.overflow = open ? "hidden" : "";
+      if (lenis) { if (open) lenis.stop(); else lenis.start(); }
     };
     toggle.addEventListener("click", function () { set(!nav.classList.contains("open")); });
     nav.addEventListener("click", function (e) { if (e.target.tagName === "A") set(false); });
@@ -360,6 +388,7 @@
       }
       show(els.indexOf(trigger));
       dlg.showModal();
+      if (lenis) lenis.stop();
     };
 
     document.querySelectorAll("[data-lightbox]").forEach(function (el) {
@@ -383,6 +412,7 @@
       startX = null;
     });
     dlg.querySelector(".lightbox-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("close", function () { if (lenis) lenis.start(); });
     dlg.addEventListener("click", function (e) {
       if (e.target === dlg || e.target === stage || e.target.matches(".lb-stage figure")) dlg.close();
     });
@@ -414,6 +444,7 @@
   }
 
   function boot() {
+    safe(initSmoothScroll, "smooth scroll");
     safe(initScrollLoop, "scroll loop");
     safe(initHeader, "header");
     safe(initProgress, "progress");
