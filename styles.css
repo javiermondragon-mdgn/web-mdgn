@@ -255,21 +255,14 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 }
 
 /* Obras */
-.works { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-flow: row dense; gap: clamp(28px, 3vw, 44px) clamp(20px, 2.4vw, 32px); }
-.work { grid-column: span 5; }
-.work-lg { grid-column: span 7; grid-row: span 2; }
-.work-lg.is-right { grid-column: 6 / span 7; }
+/* Obras: todas con la misma importancia, dos columnas iguales e imagen horizontal del mismo tamaño */
+.works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 4vw, 56px) clamp(20px, 2.4vw, 32px); }
 .work-img { overflow: hidden; position: relative; }
 .work-img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform 1.1s var(--ease), filter .6s; filter: saturate(.85); }
-.work-lg .work-img img { aspect-ratio: auto; height: 100%; min-height: 100%; }
-.work-lg { display: flex; flex-direction: column; }
-.work-lg .work-img { flex: 1; }
-.work-lg .work-img img { position: absolute; inset: 0; }
 .work:hover .work-img img { transform: scale(1.05); filter: saturate(1); }
 .work figcaption { padding-top: 18px; border-top: 1px solid var(--line-light); margin-top: 18px; }
-.work h3 { font-size: 22px; margin-bottom: 6px; }
+.work h3 { font-size: clamp(22px, 2vw, 28px); margin-bottom: 6px; }
 .work p { color: var(--muted-light); font-size: 15px; }
-.work-lg h3 { font-size: clamp(24px, 2.4vw, 32px); }
 .work-count { position: absolute; left: 14px; bottom: 14px; z-index: 1; padding: 6px 10px; background: rgba(27, 30, 28, .72); color: var(--cream); font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; pointer-events: none; }
 .work-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 16px; border: 1px solid rgba(243, 239, 231, .35); color: var(--cream); font-size: 14px; font-weight: 600; text-decoration: none; transition: background-color .3s, border-color .3s, color .3s; }
 .work-link:hover { background: var(--accent); border-color: var(--accent); }
@@ -616,8 +609,6 @@ mark.pendiente { background: rgba(224, 137, 90, .3); color: var(--accent-dark); 
   .cols3 > div, .pillars > div { padding-bottom: 28px; }
   .items > div:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
   .items > div { padding-right: 0; }
-  .work, .work-lg, .work-lg.is-right { grid-column: 1 / -1; grid-row: auto; }
-  .work-lg .work-img img { position: static; aspect-ratio: 3 / 2; height: auto; }
   .clients { grid-template-columns: repeat(3, 1fr); }
   .team { grid-template-columns: repeat(2, 1fr); }
   .ledger-row { grid-template-columns: 1fr auto; gap: 4px 16px; }
