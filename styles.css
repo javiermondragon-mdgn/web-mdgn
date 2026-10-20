@@ -106,7 +106,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; l
 .hero > .wrap { width: 100%; }
 .hero-inner { position: relative; z-index: 2; display: flex; align-items: center; flex: 1; }
 .hero-copy { max-width: 1040px; }
-.hero-title { font-size: clamp(40px, 5.8vw, 88px); letter-spacing: -0.035em; line-height: 1; margin-bottom: clamp(32px, 4vw, 48px); max-width: 20ch; text-wrap: balance; }
+.hero-title { font-size: clamp(40px, 5.8vw, 88px); letter-spacing: -0.035em; line-height: 1; margin-bottom: clamp(56px, 7vw, 96px); max-width: 20ch; text-wrap: balance; }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .hero-tags li { font-family: var(--display); font-size: 14px; font-weight: 500; letter-spacing: .02em; padding: 8px 14px; border: 1px solid rgba(243, 239, 231, .4); background: rgba(27, 30, 28, .35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: var(--cream); transition: border-color .3s, background-color .3s; }
 .hero-tags li:hover { border-color: var(--accent-light); background: rgba(224, 137, 90, .1); }
