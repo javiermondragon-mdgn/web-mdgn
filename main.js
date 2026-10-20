@@ -245,6 +245,7 @@
     var px = 0, py = 0, rect = null, queued = false;
     var paint = function () {
       queued = false;
+      if (!rect) rect = hero.getBoundingClientRect();
       light.style.transform = "translate3d(" + px.toFixed(0) + "px," + py.toFixed(0) + "px,0)";
       heroMove.mx = px / rect.width - 0.5;
       heroMove.my = py / rect.height - 0.5;
