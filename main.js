@@ -477,7 +477,6 @@
       cap.classList.add("is-changing");
       setTimeout(function () {
         cap.href = s.dataset.href;
-        cap.querySelector(".slide-tag").textContent = s.dataset.tag;
         cap.querySelector(".slide-name").textContent = s.dataset.name;
         cap.querySelector(".slide-line").textContent = s.dataset.line;
         cap.querySelector(".slide-cta").firstChild.textContent = s.dataset.href.charAt(0) === "#" ? "Ver obra " : "Ver caso ";
