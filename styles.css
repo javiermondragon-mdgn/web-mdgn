@@ -721,9 +721,11 @@ html.is-scrolling main, html.is-scrolling .site-footer { pointer-events: none; }
 .logos { overflow: hidden; margin-top: 16px; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .logos-track { display: flex; width: max-content; animation: logosMove 40s linear infinite; }
 .logos:hover .logos-track { animation-play-state: paused; }
-.logos-track li { flex: none; display: flex; align-items: center; justify-content: center; width: clamp(190px, 20vw, 280px); height: 130px; padding: 0 20px; }
-.logos-track img { width: var(--w, 50%); height: auto; object-fit: contain; filter: grayscale(1); opacity: .7; mix-blend-mode: multiply; transition: filter .4s, opacity .4s; }
-.logos-track li:hover img { filter: none; opacity: 1; }
+.logos-track li { flex: none; display: flex; align-items: center; justify-content: center; width: clamp(288px, 31vw, 450px); height: clamp(162px, 16vw, 225px); padding: 0 35px; }
+/* Logos con fondo transparente (sin mezcla de colores, que no funciona dentro de la franja animada) */
+/* Todos los logos en el mismo gris: silueta negra (brightness 0) con opacidad */
+.logos-track img { width: var(--w, 50%); max-height: 100%; height: auto; object-fit: contain; filter: brightness(0); opacity: .5; transition: opacity .4s; }
+.logos-track li:hover img { opacity: .75; }
 @keyframes logosMove { to { transform: translateX(-50%); } }
 
 .quotes2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); margin-top: 24px; }
