@@ -19,11 +19,11 @@
   <meta name="theme-color" content="#1b1e1c">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/fonts/fonts.css?v=20261062">
-  <link rel="stylesheet" href="styles.css?v=20261062">
-  <script src="init.js?v=20261062"></script>
-  <script defer src="lib/lenis.min.js?v=20261062"></script>
-  <script defer src="main.js?v=20261062"></script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css?v=20261021">
+  <link rel="stylesheet" href="styles.css?v=20261021">
+  <script src="init.js?v=20261021"></script>
+  <script defer src="lib/lenis.min.js?v=20261021"></script>
+  <script defer src="main.js?v=20261021"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,7 +52,7 @@
   </script>
 </head>
 <body>
-  <a class="skip" href="#nosotros">Saltar al contenido</a>
+  <a class="skip" href="#obras">Saltar al contenido</a>
   <div class="progress" aria-hidden="true"></div>
   <div class="cursor" aria-hidden="true"><span class="cursor-label">Ver</span></div>
 
@@ -66,12 +66,11 @@
         <span></span><span></span>
       </button>
       <nav id="nav" class="nav" aria-label="Principal">
-        <a href="#nosotros">Nosotros</a>
-        <a href="design-build/">Design &amp; Build</a>
-        <a href="#servicios">Servicios</a>
         <a href="#obras">Obras</a>
-        <a href="#trayectoria">Trayectoria</a>
-        <a href="#equipo">Equipo</a>
+        <a href="servicios/">Servicios</a>
+        <a href="design-build/">Design &amp; Build</a>
+        <a href="trayectoria/">Trayectoria</a>
+        <a href="equipo/">Equipo</a>
         <a href="#contacto" class="nav-cta">Contacto</a>
       </nav>
     </div>
@@ -79,56 +78,187 @@
 
   <main id="inicio">
 
-    <!-- Portada -->
-    <section class="hero" data-spotlight>
-      <figure class="hero-media">
-        <div class="hero-move">
-          <img src="assets/obras/nido-lucia-territoria.jpg" alt="Fachada del edificio Nido Lucía iluminada de noche, obra de MDGN" width="1400" height="958" fetchpriority="high" data-parallax>
-        </div>
-      </figure>
+    <!-- Portada: carrusel de obras -->
+    <section class="hero hero-slider" data-slider aria-roledescription="carrusel" aria-label="Obras destacadas">
+      <div class="slides">
+        <figure class="slide is-active" data-tag="Design &amp; Build · 2025" data-name="Hub Metropolitano" data-line="Cowork · Santiago Centro · 1.200 m²" data-href="#obras"><img src="assets/obras/hub-metropolitano/hub-la-plaza.jpg" alt="Zona de estar La Plaza de Hub Metropolitano, obra de MDGN" fetchpriority="high"></figure>
+        <figure class="slide" data-tag="Design &amp; Build · 2023" data-name="Oficinas Enlasa" data-line="Oficinas y nuevo COR · Vitacura · 410 m²" data-href="obras/enlasa/"><img src="assets/obras/enlasa/enlasa-oficinas.jpg" alt="Espacio de trabajo central de las oficinas Enlasa, obra de MDGN" loading="lazy" decoding="async"></figure>
+        <figure class="slide" data-tag="Design &amp; Build · 2023" data-name="Oficinas Olá Hotel" data-line="Oficinas corporativas · Las Condes · 144 m²" data-href="obras/ola-hotel/"><img src="assets/obras/ola-hotel/ola-hotel-recepcion.jpg" alt="Recepción de las oficinas Olá Hotel con muro curvo de listones, obra de MDGN" loading="lazy" decoding="async"></figure>
+        <figure class="slide" data-tag="Design &amp; Build · 2022" data-name="Call Center Policomp" data-line="Call center · Providencia · 520 m²" data-href="obras/policomp/"><img src="assets/obras/policomp/policomp-planta.jpg" alt="Planta libre del call center Policomp, obra de MDGN" loading="lazy" decoding="async"></figure>
+        <figure class="slide" data-tag="Construcción" data-name="Nido Lucía Territoria" data-line="Exteriores y lobby · Santiago Centro · 1.600 m²" data-href="#obras"><img src="assets/obras/nido-lucia-territoria.jpg" alt="Fachada del edificio Nido Lucía iluminada de noche, obra de MDGN" loading="lazy" decoding="async"></figure>
+      </div>
       <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow accent-light hero-in" style="--d:.1s" hidden>Oficina de arquitectura y constructora · Santiago, Chile</p>
-          <h1 class="hero-title" data-split data-split-now>Arquitectura y construcción para proyectos comerciales y oficinas</h1>
+          <p class="eyebrow accent-light hero-in" style="--d:.1s">Arquitectura y construcción · Santiago</p>
+          <h1 class="hero-title" data-split data-split-now>Diseñamos y construimos oficinas y espacios comerciales, con un solo equipo.</h1>
           <div class="actions hero-in" style="--d:.45s">
             <a class="btn btn-accent" data-magnetic href="#contacto">Conversemos tu proyecto <span class="arrow" aria-hidden="true">→</span></a>
             <a class="btn btn-ghost-light" data-magnetic href="#obras">Ver obras</a>
           </div>
         </div>
       </div>
-      <div class="wrap hero-foot">
-        <span>MDGN Arquitectos SpA</span>
-        <span>MDGN Constructora SpA</span>
-        <span class="hero-credit">Obra: Nido Lucía Territoria · 1.600 m²</span>
-        <a href="#nosotros" class="scroll-cue">Desliza <span aria-hidden="true">↓</span></a>
-      </div>
-    </section>
-
-    <!-- Bajada de la portada -->
-    <section class="section dark intro" aria-label="Nuestro enfoque">
-      <div class="wrap intro-inner">
-        <p class="intro-lead" data-reveal>Desarrollamos proyectos comerciales y corporativos bajo un enfoque <span class="nowrap">Design &amp; Build</span> que integra arquitectura, especialidades, gestión y construcción.</p>
-        <div class="intro-side">
-          <p class="intro-text" data-reveal style="--d:.1s">Combinamos experiencia técnica y conocimiento de las necesidades del mandante para abordar cada proyecto con planificación, coordinación y una visión integral de sus objetivos.</p>
-          <p class="intro-strong" data-reveal style="--d:.2s">Un solo equipo del diseño a la entrega.</p>
+      <div class="wrap hero-bar">
+        <a class="slide-caption" href="#obras">
+          <span class="slide-tag">Design &amp; Build · 2025</span>
+          <span class="slide-name">Hub Metropolitano</span>
+          <span class="slide-line">Cowork · Santiago Centro · 1.200 m²</span>
+          <span class="slide-cta">Ver obra <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="slide-ctrl">
+          <span class="slide-counter" aria-hidden="true"><b>01</b> / 05</span>
+          <div class="slide-dots" role="tablist" aria-label="Elegir obra"></div>
+          <div class="slide-arrows">
+            <button type="button" class="slide-prev" aria-label="Obra anterior">←</button>
+            <button type="button" class="slide-next" aria-label="Obra siguiente">→</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Quiénes somos -->
-    <section id="nosotros" class="section cream">
-      <div class="wrap sec-grid">
-        <div class="sec-label" data-reveal><span class="sec-num">01</span><p class="eyebrow">Quiénes somos</p></div>
-        <div class="sec-body">
-          <h2 class="h2" data-split>Una oficina de arquitectura especializada en comercio y oficinas, con constructora propia.</h2>
-          <p class="body-lg" data-reveal>MDGN Arquitectos es una oficina de arquitectura especialista en el desarrollo de proyectos comerciales: supermercados, strip centers, locales y oficinas. Nuestro equipo suma más de 15 años en arquitectura retail y más de 412.000 m² de proyectos retail liderados.</p>
-          <p class="body-lg" data-reveal>Con MDGN Constructora ejecutamos la obra gruesa, especialidades y las terminaciones. Trabajamos en modalidad design and build: un solo equipo y un solo contrato del diseño a la entrega.</p>
+    <!-- Cifras -->
+    <section class="section dark stats-strip" aria-label="MDGN en cifras">
+      <div class="wrap">
+        <div class="stats" data-reveal>
+          <div><strong data-count="412000" data-prefix="+">+412.000</strong><span>m² de proyectos retail liderados por el equipo</span></div>
+          <div><strong data-count="25" data-prefix="+">+25</strong><span>encargos de construcción</span></div>
+          <div><strong data-count="40" data-prefix="+">+40</strong><span>encargos para Walmart Chile desde 2023 y otros clientes</span></div>
+          <div><strong data-count="15" data-prefix="+">+15</strong><span>años de experiencia en arquitectura retail</span></div>
+        </div>
+        <a class="teaser" href="trayectoria/" data-reveal>
+          <span class="eyebrow accent-light">Experiencia desde el mandante</span>
+          <span class="teaser-text">Proyectos liderados en Walmart Chile, 2017–2021</span>
+          <span class="teaser-cta">Ver trayectoria <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Obras -->
+    <section id="obras" class="section cream">
+      <div class="wrap">
+        <div class="head-row">
+          <div>
+            <p class="eyebrow" data-reveal>Obras ejecutadas por MDGN</p>
+            <h2 class="h2" data-split>Habilitaciones que ya están funcionando</h2>
+          </div>
+        </div>
+        <div class="feats">
+          <figure class="feat is-big" data-reveal>
+            <div class="feat-img" data-cursor="Ver" data-lightbox data-title="Hub Metropolitano" data-sub="Acceso · Santiago Centro · 1.200 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Hub Metropolitano"><img src="assets/obras/hub-metropolitano/hub-acceso.jpg" alt="Acceso a Hub Metropolitano con muro de madera, logo HUB MET y cielo de vigas" loading="lazy" decoding="async" width="1333" height="1000"></div>
+            <ul class="work-more" hidden>
+              <li data-src="assets/obras/hub-metropolitano/hub-hall-principal.jpg" data-alt="Hall de acceso de Hub Metropolitano con muro de madera, logo HUB MET y cielo de vigas de madera" data-sub="Hall de acceso"></li>
+              <li data-src="assets/obras/hub-metropolitano/hub-pasillo-mapa.jpg" data-alt="Pasillo de Hub Metropolitano con mapa de la Región Metropolitana en el muro" data-sub="Circulación con mapa de la región"></li>
+              <li data-src="assets/obras/hub-metropolitano/hub-meson-recepcion.jpg" data-alt="Mesón de recepción de madera con la palabra hola y área de trabajo junto a los ventanales" data-sub="Mesón de recepción y área de trabajo"></li>
+              <li data-src="assets/obras/hub-metropolitano/hub-la-plaza.jpg" data-alt="Zona de estar La Plaza con lámparas de mimbre, mesas altas de madera y muro verde" data-sub="Zona de estar «La Plaza»"></li>
+              <li data-src="assets/obras/hub-metropolitano/hub-letras-hub-met.jpg" data-alt="Letras corpóreas HUB MET y área de trabajo colaborativo con vista a la ciudad" data-sub="Área de trabajo colaborativo"></li>
+              <li data-src="assets/obras/hub-metropolitano/hub-auditorio.jpg" data-alt="Auditorio con sillas negras, pantalla y muro de madera" data-sub="Auditorio"></li>
+              <li data-src="assets/obras/fundacion-chile.jpg" data-alt="Recepción y áreas comunes de las oficinas de Fundación Chile" data-sub="Recepción y áreas comunes"></li>
+            </ul>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Design &amp; Build · 2025</p>
+              <h3>Un cowork de 1.200 m² en el centro de Santiago</h3>
+              <p class="feat-meta"><strong>Hub Metropolitano</strong> · Santiago Centro · 1.200 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver 8 fotos <span>+</span></span>
+            </figcaption>
+          </figure>
+          <figure class="feat is-tall" data-reveal style="--d:.08s">
+            <a class="feat-img" href="obras/enlasa/" data-cursor="Ver" aria-label="Ver el caso Oficinas Enlasa"><img src="assets/obras/enlasa/enlasa-cor.jpg" alt="Nueva oficina de monitoreo COR de Enlasa, con muro de pantallas y puestos de operación" loading="lazy" decoding="async" width="1600" height="1066"></a>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Design &amp; Build · 2023</p>
+              <h3>Más luz natural y un nuevo centro de monitoreo</h3>
+              <p class="feat-meta"><strong>Oficinas Enlasa</strong> · Vitacura · 410 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver caso <span>+</span></span>
+            </figcaption>
+          </figure>
+          <figure class="feat is-tall" data-reveal style="--d:.16s">
+            <a class="feat-img" href="obras/ola-hotel/" data-cursor="Ver" aria-label="Ver el caso Oficinas Olá Hotel"><img src="assets/obras/ola-hotel/ola-hotel-circulacion.jpg" alt="Circulación junto al muro curvo de listones negros en las oficinas Olá Hotel" loading="lazy" decoding="async" width="1600" height="1066"></a>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Design &amp; Build · 2023</p>
+              <h3>De una oficina en mal estado a la nueva sede corporativa</h3>
+              <p class="feat-meta"><strong>Oficinas Olá Hotel</strong> · Las Condes · 144 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver caso <span>+</span></span>
+            </figcaption>
+          </figure>
+          <figure class="feat" data-reveal>
+            <a class="feat-img" href="obras/policomp/" data-cursor="Ver" aria-label="Ver el caso Call Center Policomp"><img src="assets/obras/policomp/policomp-acceso.jpg" alt="Acceso al call center Policomp con muro de vidrio y muro azul con el logo de la marca" loading="lazy" decoding="async" width="1600" height="1200"></a>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Design &amp; Build · 2022</p>
+              <h3>Un call center para 100 colaboradores, con la imagen de la marca</h3>
+              <p class="feat-meta"><strong>Call Center Policomp</strong> · Providencia · 520 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver caso <span>+</span></span>
+            </figcaption>
+          </figure>
+          <figure class="feat" data-reveal style="--d:.06s">
+            <div class="feat-img" data-cursor="Ver" data-lightbox data-title="Nido Lucía Territoria" data-sub="Lobby recuperado · Santiago Centro · 1.600 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Nido Lucía Territoria"><img src="assets/obras/nido-lucia/nido-lucia-lobby.jpg" alt="Lobby recuperado del edificio Nido Lucía con lámparas de fibra, mesas de madera y vegetación" loading="lazy" decoding="async" width="1600" height="1200"></div>
+            <ul class="work-more" hidden>
+              <li data-src="assets/obras/nido-lucia/nido-lucia-esquina.jpg" data-alt="Esquina del edificio Nido Lucía iluminada al atardecer, con terraza y primer piso vidriado" data-sub="Esquina y terraza exterior"></li>
+              <li data-src="assets/obras/nido-lucia-territoria.jpg" data-alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" data-sub="Fachada de noche"></li>
+            </ul>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Territoria</p>
+              <h3>Exteriores habilitados y lobby recuperado</h3>
+              <p class="feat-meta"><strong>Nido Lucía Territoria</strong> · Santiago Centro · 1.600 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver 3 fotos <span>+</span></span>
+            </figcaption>
+          </figure>
+          <figure class="feat" data-reveal style="--d:.12s">
+            <div class="feat-img" data-cursor="Ver" data-lightbox data-title="Regus Santa Lucía" data-sub="Recepción · Santiago Centro · 800 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Regus Santa Lucía"><img src="assets/obras/regus-santa-lucia/regus-recepcion.jpg" alt="Recepción de Regus Santa Lucía con mesones grises, logo Regus y jardinera de sansevierias" loading="lazy" decoding="async" width="1600" height="1200"></div>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Construcción · 2025</p>
+              <h3>Habilitación de un cowork de 800 m²</h3>
+              <p class="feat-meta"><strong>Regus Santa Lucía</strong> · Santiago Centro · 800 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver foto <span>+</span></span>
+            </figcaption>
+          </figure>
+          <figure class="feat" data-reveal style="--d:.18s">
+            <div class="feat-img" data-cursor="Ver" data-lightbox data-title="Start-Up Chile Nido Lucía" data-sub="Casino y área común · Santiago Centro · 1.200 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Start-Up Chile Nido Lucía"><img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy" decoding="async" width="1400" height="933"></div>
+            <figcaption class="feat-body">
+              <p class="feat-tag">Start-Up Chile</p>
+              <h3>Habilitación de oficinas de 1.200 m² en Nido Lucía</h3>
+              <p class="feat-meta"><strong>Start-Up Chile Nido Lucía</strong> · Santiago Centro · 1.200 m²</p>
+              <span class="feat-cta" aria-hidden="true">Ver foto <span>+</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section cream line-top">
+      <div class="wrap">
+        <div class="head-row">
+          <div>
+            <p class="eyebrow" data-reveal>Qué hacemos</p>
+            <h2 class="h2" data-split>Del proyecto a la obra, en un solo contrato</h2>
+          </div>
+        </div>
+        <div class="svc-cards">
+          <a class="svc-card" href="servicios/" data-reveal>
+            <div class="svc-img"><img src="assets/especialidades/supermercados.jpg" alt="Fachada de un supermercado Lider" loading="lazy" decoding="async" width="1844" height="853"></div>
+            <span class="svc-num">01</span>
+            <h3>Arquitectura</h3>
+            <p>Supermercados, strip centers, locales y oficinas: anteproyecto, layout, especialidades y permisos.</p>
+            <span class="svc-cta">Ver arquitectura <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="svc-card" href="servicios/#construccion" data-reveal style="--d:.08s">
+            <div class="svc-img"><img src="assets/obras/policomp/policomp-hall.jpg" alt="Hall de ascensores del call center Policomp, obra de MDGN" loading="lazy" decoding="async"></div>
+            <span class="svc-num">02</span>
+            <h3>Construcción</h3>
+            <p>Obra gruesa, terminaciones y especialidades con MDGN Constructora, incluso con la operación en marcha.</p>
+            <span class="svc-cta">Ver construcción <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="svc-card" href="design-build/" data-reveal style="--d:.16s">
+            <div class="svc-img"><img src="assets/obras/hub-metropolitano/hub-meson-recepcion.jpg" alt="Mesón de recepción de Hub Metropolitano, obra de MDGN" loading="lazy" decoding="async"></div>
+            <span class="svc-num">03</span>
+            <h3>Design &amp; Build</h3>
+            <p>Un solo equipo y un solo interlocutor del diseño a la entrega, con plazos y costos coordinados.</p>
+            <span class="svc-cta">Conocer el modelo <span aria-hidden="true">→</span></span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Por qué MDGN -->
-    <section class="section terracotta">
+    <section id="nosotros" class="section terracotta">
       <div class="wrap">
         <p class="eyebrow on-accent" data-reveal>Por qué MDGN</p>
         <h2 class="display" data-split>Diseñamos y habilitamos pensando en la operación.</h2>
@@ -144,272 +274,13 @@
       </div>
     </section>
 
-    <!-- Cifras -->
-    <section class="section dark">
-      <div class="wrap">
-        <div class="sec-head">
-          <p class="eyebrow accent-light" data-reveal>Trayectoria</p>
-          <h2 class="h2" data-split>MDGN en cifras</h2>
-        </div>
-        <div class="stats-block" data-reveal>
-          <h3 class="stats-title">Proyectos de arquitectura</h3>
-          <div class="stats">
-            <div><strong data-count="40" data-prefix="+">+40</strong><span>encargos para Walmart Chile desde 2023 y otros clientes</span></div>
-            <div><strong data-count="412000" data-prefix="+">+412.000</strong><span>m² de proyectos retail liderados por el equipo</span></div>
-            <div><strong data-count="15" data-prefix="+">+15</strong><span>años de experiencia en arquitectura retail</span></div>
-            <div><strong data-count="30" data-prefix="+">+30</strong><span>supermercados habilitados o remodelados por el equipo</span></div>
-          </div>
-        </div>
-        <div class="stats-block" data-reveal>
-          <h3 class="stats-title">Proyectos de construcción</h3>
-          <div class="stats">
-            <div><strong data-count="25" data-prefix="+">+25</strong><span>encargos de construcción</span></div>
-            <div><strong data-count="8000" data-prefix="+">+8.000</strong><span>m² habilitados</span></div>
-            <div><strong data-count="10" data-prefix="+">+10</strong><span>años de experiencia</span></div>
-            <div><strong data-count="15" data-prefix="+">+15</strong><span>clientes comerciales atendidos</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Especialidades -->
-    <section id="servicios" class="section cream">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">02</span><p class="eyebrow">Especialidades</p></div>
-          <h2 class="h2" data-split>Arquitectura comercial y corporativa</h2>
-        </div>
-      </div>
-        <div class="specs">
-          <article class="spec" data-reveal>
-            <div class="spec-bg"><img src="assets/especialidades/supermercados.jpg" alt="Fachada de un supermercado Lider" loading="lazy" decoding="async" width="1844" height="853"></div>
-            <div class="wrap"><div class="spec-body">
-              <span class="spec-num">01</span>
-              <h3>Supermercados</h3>
-              <p>Supermercados nuevos, remodelaciones omnicanal y habilitaciones en centros comerciales, con prototipos de formato y proyectos de frío.</p>
-            </div></div>
-          </article>
-          <article class="spec" data-reveal>
-            <div class="spec-bg"><img src="assets/especialidades/strip-centers.jpg" alt="Strip center con galería techada y estacionamientos" loading="lazy" decoding="async" width="1448" height="1086"></div>
-            <div class="wrap"><div class="spec-body">
-              <span class="spec-num">02</span>
-              <h3>Strip centers</h3>
-              <p>Anteproyecto, estudios de cabida y layout comercial, permisos de edificación y coordinación de especialidades.</p>
-            </div></div>
-          </article>
-          <article class="spec no-img" data-reveal hidden>
-            <div class="wrap"><div class="spec-body">
-              <span class="spec-num">03</span>
-              <h3>Locales comerciales</h3>
-              <p>Microlayouts, roll outs de cadena y estándares de marca, con obras compatibles con la venta.</p>
-            </div></div>
-          </article>
-          <article class="spec" data-reveal>
-            <div class="spec-bg"><img src="assets/obras/enlasa/enlasa-oficinas.jpg" alt="Espacio de trabajo de las oficinas Enlasa, obra de MDGN" loading="lazy" decoding="async" width="1600" height="1066"></div>
-            <div class="wrap"><div class="spec-body">
-              <span class="spec-num">03</span>
-              <h3>Oficinas</h3>
-              <p>Plantas libres, sedes, coworks y áreas comunes: puestos de trabajo, salas de reunión, casinos y baños.</p>
-            </div></div>
-          </article>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section class="section sand">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">03</span><p class="eyebrow">Servicios</p></div>
-          <h2 class="h2" data-split>Todo el ciclo, del proyecto a la obra</h2>
-        </div>
-        <div class="items">
-          <div data-reveal><h3>Diseño y proyecto</h3><p>Anteproyecto, layout comercial y proyecto de arquitectura.</p></div>
-          <div data-reveal><h3>Coordinación de especialidades</h3><p>Estructura, clima, electricidad, sanitaria y refrigeración.</p></div>
-          <div data-reveal><h3>Permisos y trámites</h3><p>Permisos de edificación, recepción final y regularizaciones.</p></div>
-          <div data-reveal><h3>Presupuesto y cubicación</h3><p>EETT, cubicaciones y presupuestos de obra en UF y CLP.</p></div>
-          <div data-reveal><h3>Construcción</h3><p>Obra gruesa y terminaciones con MDGN Constructora.</p></div>
-          <div data-reveal><h3>Remodelaciones por etapas</h3><p>Obras faseadas para remodelar sin detener la venta.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Construcción -->
-    <section id="construccion" class="section cream">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">04</span><p class="eyebrow">MDGN Constructora</p></div>
-          <h2 class="h2" data-split>Habilitaciones en modalidad design and build</h2>
-        </div>
-        <div class="tiles three">
-          <article class="tile" data-reveal>
-            <span class="tile-num">01</span>
-            <h3>Obra gruesa</h3>
-            <p>Obras previas, demoliciones, tabiquería, losas y estructuras menores para ampliaciones y remodelaciones.</p>
-          </article>
-          <article class="tile" data-reveal style="--d:.08s">
-            <span class="tile-num">02</span>
-            <h3>Terminaciones</h3>
-            <p>Pavimentos, cielos, revestimientos, pinturas, baños y mobiliario, con estándares de marca de cada operador.</p>
-          </article>
-          <article class="tile" data-reveal style="--d:.16s">
-            <span class="tile-num">03</span>
-            <h3>Especialidades</h3>
-            <p>Clima, electricidad, datos, sanitaria y mobiliario coordinados en un solo contrato.</p>
-          </article>
-        </div>
-        <div class="actions pillars-cta" data-reveal>
-          <a class="btn btn-dark" href="metodologia/">Ver metodología <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-dark" href="metodologia/#gestion-obra">Ver gestión de obra <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Capacidades -->
-    <section class="section sand">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">05</span><p class="eyebrow">Capacidades</p></div>
-          <h2 class="h2" data-split>Servicios especializados en retail</h2>
-        </div>
-        <div class="items">
-          <div data-reveal><h3>Prototipos de formato</h3><p>Desarrollo y actualización de prototipos y homologación de formatos.</p></div>
-          <div data-reveal><h3>Microlayouts y cabidas</h3><p>Estudios de cabida y microlayout para locales nuevos y existentes.</p></div>
-          <div data-reveal><h3>Roll outs de cadena</h3><p>Implementación estandarizada en múltiples locales: cajas, ascensores, marcas propias.</p></div>
-          <div data-reveal><h3>Proyectos de frío</h3><p>Arquitectura asociada a sistemas de frío comercial en sala y trastienda.</p></div>
-          <div data-reveal><h3>Permisos y normativa</h3><p>Expedientes PE, POM, MP y RF, regularizaciones y análisis OGUC.</p></div>
-          <div data-reveal><h3>Levantamientos y BIM</h3><p>Levantamientos arquitectónicos y modelación BIM coordinada.</p></div>
-        </div>
-        <div class="tools" data-reveal>
-          <div><p class="label">Software</p><p>AutoCAD, Revit, ArchiCAD, SketchUp, Navisworks, Enscape, Twinmotion, V-Ray y Adobe.</p></div>
-          <div><p class="label">Gestión</p><p>Carta Gantt, pipeline de proyectos, IBM Tririga y Microsoft Project.</p></div>
-          <div><p class="label">Normativa</p><p>OGUC, LGUC, vías de evacuación, inmuebles patrimoniales y declaraciones juradas sustitutivas de permisos.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trayectoria Walmart -->
-    <section id="trayectoria" class="section cream">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">06</span><p class="eyebrow">Experiencia desde el mandante</p></div>
-          <h2 class="h2" data-split>Proyectos liderados en Walmart Chile, 2017–2021</h2>
-        </div>
-        <div class="cols3 big-cols">
-          <div data-reveal><strong class="big" data-count="12" data-prefix="+">+12</strong><h3>Habilitaciones</h3><p class="big-m2">+75.000 m² aprox.</p><p class="cases-label">Algunos casos de éxito</p><p class="cases"><strong>Lider:</strong> Concón, Lo Blanco, Talcahuano, San Felipe, Chiguayante, Chicureo, Quilín y San Pedro.</p><p class="cases"><strong>Express:</strong> Pie Andino y Quilpué.</p></div>
-          <div data-reveal style="--d:.08s"><strong class="big" data-count="40" data-prefix="+">+40</strong><h3>Remodelaciones</h3><p class="big-m2">+235.000 m² aprox.</p><p class="cases-label">Algunos casos de éxito</p><p class="cases"><strong>Lider:</strong> Calama, Puerto Montt, Osorno, Concepción, Los Morros, Independencia, Santa Rosa, Los Andes y Coronel.</p><p class="cases"><strong>Express:</strong> Pedro de Valdivia, Reñaca y Los Ángeles.</p></div>
-          <div data-reveal style="--d:.16s"><strong class="big" data-count="7">7</strong><h3>Prototipos y gestión</h3><p>Prototipos Lider, Express, SBA y Mayorista; cabidas Lider y Express; mejoras de andén de camiones; regularización municipal Lider Buenaventura.</p></div>
-        </div>
-        <div class="total-m2" data-reveal>
-          <strong data-count="412000" data-prefix="+">+412.000</strong>
-          <div>
-            <p class="total-m2-label">m² de superficie total liderada por el equipo</p>
-            <p class="total-m2-detail">Habilitaciones (+75.000 m²) y remodelaciones (+235.000 m²) en Walmart Chile, más 102.463 m² de los proyectos de Felipe Cacho y Matías Espinoza detallados en la sección 07.</p>
-          </div>
-        </div>
-        <p class="note" data-reveal>Proyectos liderados por Javier Mondragón como Jefe de Arquitectura e Ingeniería de Walmart Chile. La superficie de habilitaciones y remodelaciones se estima con 7.000 m² por local Lider y 2.500 m² por local Express; los locales no detallados se reparten en la misma proporción que los casos indicados.</p>
-      </div>
-    </section>
-
-    <!-- Proyectos del equipo -->
-    <section class="section sand">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">07</span><p class="eyebrow">Experiencia del equipo</p></div>
-          <h2 class="h2" data-split>Algunos proyectos de nuestro equipo</h2>
-        </div>
-        <div class="ledger" role="table" aria-label="Proyectos del equipo">
-          <div class="ledger-row ledger-head" role="row"><span role="columnheader">Proyecto</span><span role="columnheader">Tipo</span><span role="columnheader">Año</span><span role="columnheader">Superficie</span></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Biobío</h3><span role="cell">Remodelación omnicanal</span><span role="cell">2024</span><strong role="cell">20.495 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider La Serena</h3><span role="cell">Remodelación omnicanal</span><span role="cell">2024</span><strong role="cell">16.543 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Puente Nuevo</h3><span role="cell">Remodelación omnicanal</span><span role="cell">2022</span><strong role="cell">14.480 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Limache</h3><span role="cell">Supermercado nuevo</span><span role="cell">2020</span><strong role="cell">13.700 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Coquimbo</h3><span role="cell">Reconstrucción EPC</span><span role="cell">2021</span><strong role="cell">11.148 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider San Pedro</h3><span role="cell">Habilitación en centro comercial</span><span role="cell">2023</span><strong role="cell">7.364 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Lider Talcahuano</h3><span role="cell">Habilitación en centro comercial</span><span role="cell">2023</span><strong role="cell">7.263 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Express Las Rejas</h3><span role="cell">Remodelación</span><span role="cell">2019</span><strong role="cell">3.200 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Express Ciudad de Los Valles</h3><span role="cell">Supermercado nuevo</span><span role="cell">2019</span><strong role="cell">2.914 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Express Lo Campino</h3><span role="cell">Habilitación</span><span role="cell">2019</span><strong role="cell">2.356 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">Líder Express Panguipulli</h3><span role="cell">Proyecto de arquitectura</span><span role="cell">2024</span><strong role="cell">~2.000 m²</strong></div>
-          <div class="ledger-row" role="row" data-reveal><h3 role="cell">SBA Vilcún</h3><span role="cell">Supermercado nuevo</span><span role="cell">2024</span><strong role="cell">~1.000 m²</strong></div>
-        </div>
-        <p class="note" data-reveal>Proyectos para Walmart Chile con Felipe Cacho y Matías Espinoza como arquitectos a cargo, en sus cargos anteriores.</p>
-      </div>
-    </section>
-
-    <!-- Obras -->
-    <section id="obras" class="section dark">
-      <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">08</span><p class="eyebrow accent-light">Obras ejecutadas</p></div>
-          <h2 class="h2" data-split>Habilitaciones ejecutadas por MDGN</h2>
-        </div>
-        <div class="works">
-          <figure class="work" data-reveal>
-            <div class="work-img" data-cursor="Ver" data-lightbox data-title="Nido Lucía Territoria" data-sub="Exteriores · Santiago Centro · 1.600 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Nido Lucía Territoria"><img src="assets/obras/nido-lucia-territoria.jpg" alt="Exterior y lobby del edificio Nido Lucía iluminados de noche" loading="lazy" decoding="async" width="1400" height="958"><span class="work-count" aria-hidden="true">+2 fotos</span></div>
-            <ul class="work-more" hidden>
-              <li data-src="assets/obras/nido-lucia/nido-lucia-esquina.jpg" data-alt="Esquina del edificio Nido Lucía iluminada al atardecer, con terraza y primer piso vidriado" data-sub="Esquina y terraza exterior"></li>
-              <li data-src="assets/obras/nido-lucia/nido-lucia-lobby.jpg" data-alt="Lobby recuperado del edificio Nido Lucía con lámparas de fibra, mesas de madera y vegetación" data-sub="Lobby recuperado"></li>
-            </ul>
-            <figcaption><p class="work-tag" aria-hidden="true">&nbsp;</p><h3>Nido Lucía Territoria</h3><p>Habilitación exteriores y recuperación de lobby · Santiago Centro · 1.600 m²</p></figcaption>
-          </figure>
-          <figure class="work" data-reveal style="--d:.1s">
-            <div class="work-img" data-cursor="Ver" data-lightbox data-title="Hub Metropolitano" data-sub="Acceso · Santiago Centro · 1.200 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Hub Metropolitano"><img src="assets/obras/hub-metropolitano/hub-acceso.jpg" alt="Acceso a Hub Metropolitano con muro de madera, logo HUB MET y cielo de vigas" loading="lazy" decoding="async" width="1333" height="1000"><span class="work-count" aria-hidden="true">+7 fotos</span></div>
-            <ul class="work-more" hidden>
-              <li data-src="assets/obras/hub-metropolitano/hub-hall-principal.jpg" data-alt="Hall de acceso de Hub Metropolitano con muro de madera, logo HUB MET y cielo de vigas de madera" data-sub="Hall de acceso"></li>
-              <li data-src="assets/obras/hub-metropolitano/hub-pasillo-mapa.jpg" data-alt="Pasillo de Hub Metropolitano con mapa de la Región Metropolitana en el muro" data-sub="Circulación con mapa de la región"></li>
-              <li data-src="assets/obras/hub-metropolitano/hub-meson-recepcion.jpg" data-alt="Mesón de recepción de madera con la palabra hola y área de trabajo junto a los ventanales" data-sub="Mesón de recepción y área de trabajo"></li>
-              <li data-src="assets/obras/hub-metropolitano/hub-la-plaza.jpg" data-alt="Zona de estar La Plaza con lámparas de mimbre, mesas altas de madera y muro verde" data-sub="Zona de estar «La Plaza»"></li>
-              <li data-src="assets/obras/hub-metropolitano/hub-letras-hub-met.jpg" data-alt="Letras corpóreas HUB MET y área de trabajo colaborativo con vista a la ciudad" data-sub="Área de trabajo colaborativo"></li>
-              <li data-src="assets/obras/hub-metropolitano/hub-auditorio.jpg" data-alt="Auditorio con sillas negras, pantalla y muro de madera" data-sub="Auditorio"></li>
-              <li data-src="assets/obras/fundacion-chile.jpg" data-alt="Recepción y áreas comunes de las oficinas de Fundación Chile" data-sub="Recepción y áreas comunes"></li>
-            </ul>
-            <figcaption><p class="work-tag">Design &amp; Build · 2025</p><h3>Hub Metropolitano</h3><p>Habilitación de espacio de cowork · Santiago Centro · 1.200 m²</p></figcaption>
-          </figure>
-          <figure class="work" data-reveal>
-            <div class="work-img" data-cursor="Ver" data-lightbox tabindex="0" role="button" aria-label="Ampliar foto"><img src="assets/obras/startup-chile.jpg" alt="Casino y área común de las oficinas Start-Up Chile" loading="lazy" decoding="async" width="1400" height="933"></div>
-            <figcaption><p class="work-tag" aria-hidden="true">&nbsp;</p><h3>Start-Up Chile Nido Lucía</h3><p>Habilitación de oficinas · Santiago Centro · 1.200 m²</p></figcaption>
-          </figure>
-          <figure class="work" data-reveal style="--d:.1s">
-            <div class="work-img" data-cursor="Ver" data-lightbox data-title="Regus Santa Lucía" data-sub="Recepción · Santiago Centro · 800 m²" tabindex="0" role="button" aria-label="Ver foto del proyecto Regus Santa Lucía"><img src="assets/obras/regus-santa-lucia/regus-recepcion.jpg" alt="Recepción de Regus Santa Lucía con mesones grises, logo Regus y jardinera de sansevierias" loading="lazy" decoding="async" width="1600" height="1200"></div>
-            <figcaption><p class="work-tag">Construcción · 2025</p><h3>Regus Santa Lucía</h3><p>Habilitación cowork · Santiago Centro · 800 m²</p></figcaption>
-          </figure>
-          <figure class="work" data-reveal>
-            <div class="work-img" data-cursor="Ver" data-lightbox data-title="Oficinas Enlasa" data-sub="Espacio de trabajo central · Vitacura · 410 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Oficinas Enlasa"><img src="assets/obras/enlasa/enlasa-oficinas.jpg" alt="Espacio de trabajo central de las oficinas Enlasa, con iluminación lineal y piso de madera" loading="lazy" decoding="async" width="1600" height="1066"><span class="work-count" aria-hidden="true">+2 fotos</span></div>
-            <ul class="work-more" hidden>
-              <li data-src="assets/obras/enlasa/enlasa-cor.jpg" data-alt="Nueva oficina de monitoreo COR de Enlasa, con muro de pantallas y puestos de operación" data-sub="Nueva oficina de monitoreo COR"></li>
-              <li data-src="assets/obras/enlasa/enlasa-recepcion.jpg" data-alt="Recepción de las oficinas Enlasa con mesón negro y pantallas" data-sub="Recepción"></li>
-            </ul>
-            <figcaption><p class="work-tag">Design &amp; Build</p><h3>Oficinas Enlasa</h3><p>Mejoramiento oficinas y nuevo COR · Vitacura · 410 m²</p><a class="work-link" href="obras/enlasa/" target="_blank" rel="noopener">Más información <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a></figcaption>
-          </figure>
-          <figure class="work" data-reveal style="--d:.1s">
-            <div class="work-img" data-cursor="Ver" data-lightbox data-title="Oficinas Olá Hotel" data-sub="Recepción · Las Condes · 144 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Oficinas Olá Hotel"><img src="assets/obras/ola-hotel/ola-hotel-recepcion.jpg" alt="Recepción de las oficinas Olá Hotel con muro curvo de listones negros y letrero iluminado" loading="lazy" decoding="async" width="1600" height="1066"><span class="work-count" aria-hidden="true">+3 fotos</span></div>
-            <ul class="work-more" hidden>
-              <li data-src="assets/obras/ola-hotel/ola-hotel-circulacion.jpg" data-alt="Circulación junto al muro curvo de listones negros en las oficinas Olá Hotel" data-sub="Circulación y zona de café"></li>
-              <li data-src="assets/obras/ola-hotel/ola-hotel-oficina.jpg" data-alt="Oficina con puestos de trabajo, piso de madera y ventanales en Olá Hotel" data-sub="Oficina de trabajo"></li>
-              <li data-src="assets/obras/ola-hotel/ola-hotel-letrero.jpg" data-alt="Detalle del letrero iluminado de Olá Hotel sobre el muro de listones" data-sub="Detalle del letrero"></li>
-            </ul>
-            <figcaption><p class="work-tag">Design &amp; Build</p><h3>Oficinas Olá Hotel</h3><p>Remodelación oficinas corporativas · Las Condes · 144 m²</p><a class="work-link" href="obras/ola-hotel/" target="_blank" rel="noopener">Más información <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a></figcaption>
-          </figure>
-          <figure class="work" data-reveal>
-            <div class="work-img" data-cursor="Ver" data-lightbox data-title="Call Center Policomp" data-sub="Acceso y nueva imagen de marca · Providencia · 520 m²" tabindex="0" role="button" aria-label="Ver fotos del proyecto Call Center Policomp"><img src="assets/obras/policomp/policomp-acceso.jpg" alt="Acceso al call center Policomp con muro de vidrio y muro azul con el logo de la marca" loading="lazy" decoding="async" width="1600" height="1200"><span class="work-count" aria-hidden="true">+2 fotos</span></div>
-            <ul class="work-more" hidden>
-              <li data-src="assets/obras/policomp/policomp-hall.jpg" data-alt="Hall de ascensores con piso gris y vista a los puestos de trabajo tras el muro de vidrio" data-sub="Hall de ascensores"></li>
-              <li data-src="assets/obras/policomp/policomp-planta.jpg" data-alt="Planta libre del call center Policomp con puestos de trabajo en hilera y cielo a la vista" data-sub="Planta libre de puestos de trabajo"></li>
-            </ul>
-            <figcaption><p class="work-tag">Design &amp; Build</p><h3>Call Center Policomp</h3><p>Habilitación call center · Providencia · 520 m²</p><a class="work-link" href="obras/policomp/" target="_blank" rel="noopener">Más información <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- Clientes -->
-    <section class="section cream">
+    <section class="section cream logos-sec">
       <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">09</span><p class="eyebrow">Clientes</p></div>
-          <h2 class="h2" data-split>Quienes confían en nosotros</h2>
-        </div>
-        <ul class="clients" data-reveal>
+        <p class="eyebrow" data-reveal>Quienes confían en nosotros</p>
+      </div>
+      <div class="logos" data-reveal>
+        <ul class="logos-track">
           <li><img src="assets/clientes/walmart.png" alt="Walmart" loading="lazy" decoding="async" style="--w:54%"></li>
           <li><img src="assets/clientes/territoria.png" alt="Territoria" loading="lazy" decoding="async" style="--w:72%"></li>
           <li><img src="assets/clientes/regus.png" alt="Regus" loading="lazy" decoding="async" style="--w:40%"></li>
@@ -424,61 +295,58 @@
       </div>
     </section>
 
-    <!-- Opiniones de clientes: OCULTA hasta tener testimonios reales. Para activarla, quitar <template> y cambiar Equipo a 11. -->
+    <!-- Opiniones de clientes: OCULTA hasta tener testimonios reales. Para activarla, quitar <template> y completar los textos. -->
     <template id="opiniones-pendiente">
     <section id="opiniones" class="section dark">
       <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">10</span><p class="eyebrow accent-light">Opiniones</p></div>
-          <h2 class="h2" data-split>Lo que dicen nuestros clientes</h2>
-        </div>
-        <div class="quotes">
-          <figure class="quote" data-reveal>
-            <blockquote><p>[Texto del testimonio pendiente: opinión real del cliente]</p></blockquote>
-            <figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption>
-          </figure>
-          <figure class="quote" data-reveal style="--d:.1s">
-            <blockquote><p>[Texto del testimonio pendiente: opinión real del cliente]</p></blockquote>
-            <figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption>
-          </figure>
-          <figure class="quote" data-reveal style="--d:.2s">
-            <blockquote><p>[Texto del testimonio pendiente: opinión real del cliente]</p></blockquote>
-            <figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption>
-          </figure>
+        <p class="eyebrow accent-light" data-reveal>Lo que dicen nuestros clientes</p>
+        <div class="quotes2">
+          <figure class="quote2" data-reveal><span class="quote2-mark" aria-hidden="true">“</span><blockquote><p>[Texto del testimonio pendiente]</p></blockquote><figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption></figure>
+          <figure class="quote2" data-reveal style="--d:.08s"><span class="quote2-mark" aria-hidden="true">“</span><blockquote><p>[Texto del testimonio pendiente]</p></blockquote><figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption></figure>
+          <figure class="quote2" data-reveal style="--d:.16s"><span class="quote2-mark" aria-hidden="true">“</span><blockquote><p>[Texto del testimonio pendiente]</p></blockquote><figcaption><strong>[Nombre]</strong><span>[Cargo] · [Empresa]</span></figcaption></figure>
         </div>
       </div>
     </section>
     </template>
 
     <!-- Equipo -->
-    <section id="equipo" class="section sand">
+    <section id="equipo" class="section cream line-top">
       <div class="wrap">
-        <div class="sec-grid">
-          <div class="sec-label" data-reveal><span class="sec-num">10</span><p class="eyebrow">Equipo</p></div>
-          <h2 class="h2" data-split>Experiencia que respalda cada proyecto</h2>
+        <div class="head-row">
+          <div>
+            <p class="eyebrow" data-reveal>Equipo</p>
+            <h2 class="h2" data-split>Arquitectos y constructores con experiencia del lado del mandante</h2>
+          </div>
+          <a class="btn btn-dark" href="equipo/" data-reveal>Conocer al equipo <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <div class="team">
-          <article data-reveal><div class="portrait"><img src="assets/equipo/javier-mondragon.jpg" alt="Retrato de Javier Mondragón" loading="lazy" decoding="async"></div><h3>Javier Mondragón</h3><p class="role">Gerente de Arquitectura y Construcción</p><p>Arquitecto UVM. Más de 15 años de experiencia en gestión de proyectos tanto en Chile como en el extranjero. Ex Jefe de Arquitectura e Ingeniería en Walmart Chile, liderando proyectos de supermercados para los formatos Lider y Express.</p></article>
-          <article data-reveal style="--d:.06s"><div class="portrait"><img src="assets/equipo/felipe-cacho.jpg" alt="Retrato de Felipe Cacho" loading="lazy" decoding="async"></div><h3>Felipe Cacho</h3><p class="role">Jefe de Arquitectura</p><p>Arquitecto UC. Más de 15 años de experiencia en arquitectura retail, como supermercados y strip centers. Desarrollo de proyectos de arquitectura para Walmart Chile. Especialista en OGUC y permisos.</p></article>
-          <article data-reveal style="--d:.12s"><div class="portrait"><img src="assets/equipo/katya-torres.jpg" alt="Retrato de Katya Torres" loading="lazy" decoding="async"></div><h3>Katya Torres</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con especialización en regularizaciones. Prototipos comerciales Walmart ED25 y ED26, layouts y homologación de formatos.</p></article>
-          <article data-reveal style="--d:.18s"><div class="portrait"><img src="assets/equipo/valentina-mondragon.jpg" alt="Retrato de Valentina Mondragón" loading="lazy" decoding="async"></div><h3>Valentina Mondragón</h3><p class="role">Arquitecta</p><p>Arquitecta PUCV, con certificación BIM. Prototipos Walmart ED25 y experiencia en proyectos industriales para Codelco y SIKA.</p></article>
-          <article data-reveal><div class="portrait"><img src="assets/equipo/matias-espinoza.jpg" alt="Retrato de Matías Espinoza" loading="lazy" decoding="async"></div><h3>Matías Espinoza</h3><p class="role">Arquitecto</p><p>Arquitecto Universidad de Chile y ayudante de cátedra. Proyectos Líder Express y SBA, modelación BIM y tramitación municipal.</p></article>
-          <article data-reveal style="--d:.06s"><div class="portrait"><img src="assets/equipo/sofia-becerra.jpg" alt="Retrato de Sofía Becerra" loading="lazy" decoding="async"></div><h3>Sofía Becerra</h3><p class="role">Administración y Finanzas</p><p>Constructora Civil USACH y Contadora. Oficina técnica, APU y control de costos en habilitaciones para Territoria, Uniacc y Fundación Chile.</p></article>
-          <article data-reveal style="--d:.12s"><div class="portrait"><img src="assets/equipo/cristian-arevalo.jpg" alt="Retrato de Cristian Arévalo" loading="lazy" decoding="async"></div><h3>Cristian Arévalo</h3><p class="role">Jefe de Oficina Técnica</p><p>Constructor Civil e Ing. (E) en Geomensura. Administración de contratos y estados de pago; ex Mall Plaza, obras en 7 malls en operación.</p></article>
-        </div>
+        <ul class="team-strip">
+          <li data-reveal><img src="assets/equipo/javier-mondragon.jpg" alt="Retrato de Javier Mondragón" loading="lazy" decoding="async"><strong>Javier Mondragón</strong><span>Gerente de Arquitectura y Construcción</span></li>
+          <li data-reveal style="--d:.04s"><img src="assets/equipo/felipe-cacho.jpg" alt="Retrato de Felipe Cacho" loading="lazy" decoding="async"><strong>Felipe Cacho</strong><span>Jefe de Arquitectura</span></li>
+          <li data-reveal style="--d:.08s"><img src="assets/equipo/cristian-arevalo.jpg" alt="Retrato de Cristian Arévalo" loading="lazy" decoding="async"><strong>Cristian Arévalo</strong><span>Jefe de Oficina Técnica</span></li>
+          <li data-reveal style="--d:.12s"><img src="assets/equipo/sofia-becerra.jpg" alt="Retrato de Sofía Becerra" loading="lazy" decoding="async"><strong>Sofía Becerra</strong><span>Administración y Finanzas</span></li>
+          <li data-reveal style="--d:.16s"><img src="assets/equipo/katya-torres.jpg" alt="Retrato de Katya Torres" loading="lazy" decoding="async"><strong>Katya Torres</strong><span>Arquitecta</span></li>
+          <li data-reveal style="--d:.2s"><img src="assets/equipo/valentina-mondragon.jpg" alt="Retrato de Valentina Mondragón" loading="lazy" decoding="async"><strong>Valentina Mondragón</strong><span>Arquitecta</span></li>
+          <li data-reveal style="--d:.24s"><img src="assets/equipo/matias-espinoza.jpg" alt="Retrato de Matías Espinoza" loading="lazy" decoding="async"><strong>Matías Espinoza</strong><span>Arquitecto</span></li>
+        </ul>
       </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="section dark contact">
-      <div class="wrap">
-        <p class="eyebrow accent-light" data-reveal>Contacto</p>
+    <section id="contacto" class="section terracotta cta-final">
+      <div class="wrap cta-final-inner">
         <h2 class="display" data-split>Conversemos tu próximo proyecto.</h2>
-        <p class="body-lg narrow contact-lead" data-reveal>Cuéntanos el tipo de proyecto, su ubicación, superficie y plazos estimados. Coordinamos una reunión técnica para revisar requerimientos, alcance y la mejor forma de abordarlo.</p>
-        <div class="actions" data-reveal>
-          <a class="btn btn-accent" data-magnetic href="mailto:javier.mondragon@mdgn.cl?subject=Solicitud%20de%20reuni%C3%B3n%20t%C3%A9cnica&amp;body=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20reuni%C3%B3n%20t%C3%A9cnica%20con%20MDGN.%0A%0AEmpresa%3A%0ACargo%3A%0ATipo%20de%20proyecto%20%28habilitaci%C3%B3n%2C%20remodelaci%C3%B3n%2C%20ampliaci%C3%B3n%20u%20obra%20nueva%29%3A%0AUbicaci%C3%B3n%3A%0ASuperficie%20aproximada%20%28m%C2%B2%29%3A%0APlazo%20estimado%3A%0A%0AComentarios%3A%0A">Solicitar reunión técnica <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost-light" data-magnetic href="https://wa.me/56971392003?text=Hola%2C%20les%20escribo%20desde%20mdgn.cl.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> WhatsApp</a>
+        <div>
+          <p class="body-lg" data-reveal>Cuéntanos el tipo de proyecto, su ubicación, superficie y plazos estimados. Coordinamos una reunión técnica para revisar requerimientos, alcance y la mejor forma de abordarlo.</p>
+          <div class="actions" data-reveal>
+            <a class="btn btn-dark" data-magnetic href="mailto:javier.mondragon@mdgn.cl?subject=Solicitud%20de%20reuni%C3%B3n%20t%C3%A9cnica&amp;body=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20reuni%C3%B3n%20t%C3%A9cnica%20con%20MDGN.%0A%0AEmpresa%3A%0ACargo%3A%0ATipo%20de%20proyecto%20%28habilitaci%C3%B3n%2C%20remodelaci%C3%B3n%2C%20ampliaci%C3%B3n%20u%20obra%20nueva%29%3A%0AUbicaci%C3%B3n%3A%0ASuperficie%20aproximada%20%28m%C2%B2%29%3A%0APlazo%20estimado%3A%0A%0AComentarios%3A%0A">Solicitar reunión técnica <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-line-light" data-magnetic href="https://wa.me/56971392003?text=Hola%2C%20les%20escribo%20desde%20mdgn.cl.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> WhatsApp</a>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section dark contact contact-info" aria-label="Datos de contacto">
+      <div class="wrap">
         <div class="cols3 contact-cols" data-reveal>
           <div>
             <p class="label accent-light">Javier Mondragón</p>

@@ -439,6 +439,103 @@
     Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
+  /* Portada: carrusel de obras con avance automático; se pausa con el mouse encima */
+  function initSlider() {
+    var hero = document.querySelector("[data-slider]");
+    if (!hero) return;
+    var slides = Array.prototype.slice.call(hero.querySelectorAll(".slide"));
+    var dotsBox = hero.querySelector(".slide-dots");
+    var cap = hero.querySelector(".slide-caption");
+    var counter = hero.querySelector(".slide-counter");
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var DUR = 6000;
+    var i = 0, timer = null, paused = false, left = DUR, started = 0;
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+
+    var dots = slides.map(function (s, k) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", s.dataset.name);
+      b.style.setProperty("--dur", DUR + "ms");
+      b.addEventListener("click", function () { go(k); });
+      dotsBox.appendChild(b);
+      return b;
+    });
+
+    var render = function () {
+      var s = slides[i];
+      slides.forEach(function (el, k) { el.classList.toggle("is-active", k === i); });
+      dots.forEach(function (d, k) {
+        d.classList.remove("is-active");
+        d.classList.toggle("is-done", k < i);
+        d.setAttribute("aria-selected", k === i ? "true" : "false");
+      });
+      void dots[i].offsetWidth;
+      dots[i].classList.add("is-active");
+      counter.innerHTML = "<b>" + pad(i + 1) + "</b> / " + pad(slides.length);
+      cap.classList.add("is-changing");
+      setTimeout(function () {
+        cap.href = s.dataset.href;
+        cap.querySelector(".slide-tag").textContent = s.dataset.tag;
+        cap.querySelector(".slide-name").textContent = s.dataset.name;
+        cap.querySelector(".slide-line").textContent = s.dataset.line;
+        cap.querySelector(".slide-cta").firstChild.textContent = s.dataset.href.charAt(0) === "#" ? "Ver obra " : "Ver caso ";
+        cap.classList.remove("is-changing");
+      }, 300);
+    };
+    var schedule = function (ms) {
+      clearTimeout(timer);
+      if (still) return;
+      left = ms; started = Date.now();
+      timer = setTimeout(function () { go(i + 1); }, ms);
+    };
+    var go = function (k) {
+      i = (k + slides.length) % slides.length;
+      render();
+      schedule(DUR);
+    };
+
+    hero.querySelector(".slide-prev").addEventListener("click", function () { go(i - 1); });
+    hero.querySelector(".slide-next").addEventListener("click", function () { go(i + 1); });
+    hero.addEventListener("mouseenter", function () {
+      if (paused || still) return;
+      paused = true; hero.classList.add("is-paused");
+      clearTimeout(timer); left -= Date.now() - started;
+    });
+    hero.addEventListener("mouseleave", function () {
+      if (!paused) return;
+      paused = false; hero.classList.remove("is-paused");
+      schedule(Math.max(left, 300));
+    });
+    var startX = null;
+    hero.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    hero.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) clearTimeout(timer); else if (!paused) schedule(DUR);
+    });
+
+    render();
+    schedule(DUR);
+  }
+
+  /* Logos de clientes: se duplica la lista para que la franja avance sin cortes */
+  function initLogos() {
+    var track = document.querySelector(".logos-track");
+    if (!track) return;
+    Array.prototype.slice.call(track.children).forEach(function (li) {
+      var c = li.cloneNode(true);
+      c.setAttribute("aria-hidden", "true");
+      c.querySelector("img").alt = "";
+      track.appendChild(c);
+    });
+  }
+
   function initYear() {
     var y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
@@ -461,6 +558,8 @@
     safe(initCursor, "cursor");
     safe(initLightbox, "lightbox");
     safe(initScrollSpy, "scrollspy");
+    safe(initSlider, "slider");
+    safe(initLogos, "logos");
     safe(initYear, "year");
   }
 
