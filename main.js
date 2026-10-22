@@ -79,6 +79,17 @@
     } });
   }
 
+  /* Botón flotante de WhatsApp: oculto en la primera pantalla, aparece desde la segunda */
+  function initWaFloat() {
+    var wa = document.querySelector(".wa-float");
+    if (!wa) return;
+    var on = null;
+    onScroll({ write: function () {
+      var next = view.y > view.vh * 0.6;
+      if (next !== on) { on = next; wa.classList.toggle("is-shown", on); }
+    } });
+  }
+
   /* Barra de avance de lectura */
   function initProgress() {
     var bar = document.querySelector(".progress");
@@ -544,6 +555,7 @@
     safe(initSmoothScroll, "smooth scroll");
     safe(initScrollLoop, "scroll loop");
     safe(initHeader, "header");
+    safe(initWaFloat, "whatsapp");
     safe(initProgress, "progress");
     safe(initMenu, "menu");
     safe(initSplit, "split");
