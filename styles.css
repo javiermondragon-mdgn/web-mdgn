@@ -747,7 +747,14 @@ html.is-scrolling main, html.is-scrolling .site-footer { pointer-events: none; }
 .btn-line-light { border-color: rgba(247, 241, 232, .55); color: var(--on-accent); }
 .btn-line-light::before { background: var(--on-accent); }
 .btn-line-light:hover { color: var(--accent); }
-.contact-info { padding: clamp(56px, 6vw, 88px) 0; }
+.contact-info { padding: clamp(36px, 4vw, 56px) 0; }
+.contact-info .contact-cols { margin-top: 0; }
+.contact-info .contact-cols > div { padding-top: 0; padding-bottom: 0; }
+.contact-info .contact-cols p { margin-bottom: 0; }
+.contact-info .contact-privacy { margin-top: clamp(28px, 3vw, 40px); }
+@media (max-width: 900px) {
+  .contact-info .contact-cols { row-gap: 26px; }
+}
 
 @media (max-width: 1200px) {
   .feat:not(.is-big):not(.is-tall) { grid-column: span 6; aspect-ratio: 16 / 11; }
